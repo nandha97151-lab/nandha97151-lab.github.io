@@ -514,7 +514,7 @@ body.hover-image .cursor-ring {
 
 /* Sticker Avatar reveal */
 .profile-avatar-container {
-  width: 160px;
+  width: 120px;
   height: auto;
   margin: 1rem 0 2rem 0;
   perspective: 1000px;
@@ -2492,7 +2492,7 @@ body.hover-image .cursor-ring {
   }
   
   .profile-avatar-container {
-    width: 120px;
+    width: 90px;
     height: auto;
   }
   
