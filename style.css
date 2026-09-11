@@ -688,7 +688,7 @@ body.hover-image .cursor-ring {
 
 /* --- 02 — WHERE CODE MEETS Pinned Typography --- */
 .pinned-section {
-  height: 300vh; /* Scroll headroom for scrub */
+  height: 200vh; /* Scroll headroom for scrub */
   background-color: var(--bg-primary);
   margin: 0;
   padding: 0;
