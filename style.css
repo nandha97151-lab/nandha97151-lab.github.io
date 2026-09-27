@@ -524,13 +524,11 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
 .work-card.span-8 { grid-column: span 8; }
 .work-card.span-6 { grid-column: span 6; }
 
+/* ── Full bleed image card ── */
 .work-thumb-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  background: var(--bg-2);
-  border-bottom: 1px solid var(--border);
 }
 
 .work-thumb {
@@ -538,77 +536,107 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(15%);
-  transition: filter 0.4s, transform 0.5s var(--ease-out);
+  filter: grayscale(10%) brightness(0.85);
+  transition: filter 0.5s, transform 0.6s var(--ease-out);
 }
-.work-card:hover .work-thumb { filter: grayscale(0%); transform: scale(1.03); }
+.work-card:hover .work-thumb {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.04);
+}
 
 .work-thumb-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(12,12,14,0.4) 0%, transparent 40%);
+  /* Strong bottom gradient so text is always readable */
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 10, 0.96) 0%,
+    rgba(8, 8, 10, 0.7) 30%,
+    rgba(8, 8, 10, 0.2) 60%,
+    transparent 100%
+  );
   pointer-events: none;
 }
 
-.work-body {
-  padding: 1.5rem;
-  flex: 1;
+/* Card must be positioned so absolute children work */
+.work-card {
+  position: relative;
+  min-height: 320px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s, transform 0.3s var(--ease-out);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  justify-content: flex-end;
+}
+.work-card:hover {
+  border-color: rgba(201, 56, 43, 0.5);
+  transform: translateY(-4px);
+}
+.work-card:active { transform: translateY(-1px) scale(0.99); }
+
+/* Content overlaid at the bottom */
+.work-body {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
 .work-body-top {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.1rem;
+  gap: 0.6rem;
+  margin-bottom: 0.15rem;
 }
 
 .work-num {
   font-family: var(--f-mono);
-  font-size: 11px;
-  color: var(--text-3);
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
   font-weight: 500;
 }
 
 .work-code {
   font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 8px;
+  letter-spacing: 0.14em;
   padding: 2px 7px;
-  border: 1px solid rgba(201, 56, 43, 0.4);
+  border: 1px solid rgba(201, 56, 43, 0.55);
   border-radius: 4px;
   color: var(--accent);
-  background: rgba(201, 56, 43, 0.08);
+  background: rgba(201, 56, 43, 0.12);
   text-transform: uppercase;
 }
 
 .work-category {
   font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-size: 9px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .work-title {
   font-family: var(--f-display);
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--white);
-  line-height: 1.25;
-  margin-block: 0.1rem;
+  line-height: 1.2;
 }
 
 .work-desc {
-  font-size: 0.875rem;
-  color: var(--text-3);
-  line-height: 1.6;
-  flex: 1;
-  max-width: 54ch;
+  font-size: 0.825rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.55;
+  max-width: 52ch;
 }
 
 .work-footer {
@@ -616,40 +644,74 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  margin-top: 0.65rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .work-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
   align-items: center;
 }
 
 .work-tag {
   font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  padding: 3px 8px;
-  border: 1px solid var(--border);
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 4px;
-  color: var(--text-3);
-  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
   transition: border-color 0.2s, color 0.2s;
 }
-.work-card:hover .work-tag { border-color: rgba(201, 56, 43, 0.35); color: var(--text-2); }
+.work-card:hover .work-tag {
+  border-color: rgba(201, 56, 43, 0.5);
+  color: rgba(255,255,255,0.9);
+}
 
 .work-cta-hint {
   font-family: var(--f-mono);
-  font-size: 10px;
-  letter-spacing: 0.05em;
-  color: var(--text-3);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.4);
   white-space: nowrap;
   transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
 }
-.work-card:hover .work-cta-hint { color: var(--accent); transform: translateX(3px); }
+.work-card:hover .work-cta-hint { color: var(--accent); transform: translateX(4px); }
+
+.work-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.work-gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 5px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.work-gh-link:hover {
+  color: var(--white);
+  border-color: rgba(201,56,43,0.6);
+  background: rgba(201,56,43,0.12);
+}
 
 @media (max-width: 1024px) {
   .work-card.span-7,
@@ -657,6 +719,7 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
   .work-card.span-4,
   .work-card.span-8 { grid-column: span 12; }
   .work-card.span-6 { grid-column: span 12; }
+  .work-card { min-height: 280px; }
 }
 
 /* === MODAL === */
