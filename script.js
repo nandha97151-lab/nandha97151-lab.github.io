@@ -78,20 +78,20 @@ const SKILL_CATEGORIES = [
 
 const JOURNEY = [
   {
-    year: '2022 — Present',
+    year: '2027 / PRESENT',
     title: 'B.Tech Artificial Intelligence & Data Science',
     org: 'KPR Institute of Engineering and Technology, Coimbatore',
-    desc: 'Coursework in machine learning, deep learning, computer vision, natural language processing, and autonomous systems. CGPA focus with hands-on project work each semester.',
+    desc: 'Coursework in machine learning, deep learning, computer vision, natural language processing, and autonomous systems. Hands-on project work each semester.',
   },
   {
     year: '2022',
-    title: 'HSC — Class XII',
+    title: 'HSC, Class XII',
     org: 'Govt. Higher Secondary School',
     desc: 'State board senior secondary with mathematics, physics, and computer science. Developed early interest in programming and algorithmic problem solving.',
   },
   {
     year: '2020',
-    title: 'SSLC — Class X',
+    title: 'SSLC, Class X',
     org: 'Govt. Higher Secondary School',
     desc: 'Foundational academics with strong scores in mathematics and science.',
   },
@@ -102,7 +102,7 @@ function initCursor() {
   const cursor = document.getElementById('cursor');
   if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
 
-  const dot  = cursor.querySelector('.cursor-dot');
+  const dot = cursor.querySelector('.cursor-dot');
   const ring = cursor.querySelector('.cursor-ring');
   let mx = -100, my = -100, rx = -100, ry = -100;
 
@@ -115,7 +115,7 @@ function initCursor() {
     rx += (mx - rx) * 0.12;
     ry += (my - ry) * 0.12;
 
-    dot.style.transform  = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
     ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
 
     requestAnimationFrame(tick);
@@ -167,18 +167,18 @@ function initCanvas() {
   let W, H, particles = [];
 
   function resize() {
-    W = canvas.width  = canvas.offsetWidth;
+    W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   }
 
   class Particle {
     constructor() { this.reset(); }
     reset() {
-      this.x  = Math.random() * W;
-      this.y  = Math.random() * H;
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
       this.vx = (Math.random() - 0.5) * 0.3;
       this.vy = (Math.random() - 0.5) * 0.3;
-      this.r  = Math.random() * 1.2 + 0.4;
+      this.r = Math.random() * 1.2 + 0.4;
       this.alpha = Math.random() * 0.5 + 0.1;
     }
     update() {
@@ -336,7 +336,7 @@ function buildWorks() {
 
 /* ============ MODAL ============ */
 function initModal() {
-  const modal    = document.getElementById('project-modal');
+  const modal = document.getElementById('project-modal');
   const backdrop = document.getElementById('modal-backdrop');
   const closeBtn = document.getElementById('modal-close');
 
@@ -351,21 +351,21 @@ function initModal() {
 }
 
 function openModal(project) {
-  const modal    = document.getElementById('project-modal');
+  const modal = document.getElementById('project-modal');
   const category = document.getElementById('modal-category');
-  const title    = document.getElementById('modal-title');
-  const desc     = document.getElementById('modal-desc');
-  const tagsEl   = document.getElementById('modal-tags');
-  const link     = document.getElementById('modal-link');
-  const imgEl    = document.getElementById('modal-img');
+  const title = document.getElementById('modal-title');
+  const desc = document.getElementById('modal-desc');
+  const tagsEl = document.getElementById('modal-tags');
+  const link = document.getElementById('modal-link');
+  const imgEl = document.getElementById('modal-img');
 
   category.textContent = project.category;
-  title.textContent    = project.title;
-  desc.textContent     = project.longDesc || project.desc;
-  link.href            = project.github;
-  imgEl.src            = project.thumb || '';
-  imgEl.alt            = project.title;
-  imgEl.style.display  = project.thumb ? 'block' : 'none';
+  title.textContent = project.title;
+  desc.textContent = project.longDesc || project.desc;
+  link.href = project.github;
+  imgEl.src = project.thumb || '';
+  imgEl.alt = project.title;
+  imgEl.style.display = project.thumb ? 'block' : 'none';
 
   tagsEl.innerHTML = project.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
 
