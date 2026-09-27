@@ -46,7 +46,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Student', 'Portal', 'Services', 'Campus Data'],
     features: ['Attendance tracking', 'Timetable management', 'Event coordination', 'Academic notices'],
     tags: ['React', 'Node.js', 'MongoDB'],
-    thumb: 'assets/proj_campus_1790479280224.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_campus_1790479280224.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Portal', span: 'span-6'
   },
   {
     num: '05', code: 'E-COMMERCE', category: 'WEB / E-COMMERCE',
@@ -56,7 +56,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Discover', 'Product', 'Cart', 'Checkout', 'Order'],
     features: ['Product browsing', 'Shopping Cart', 'Payment Integration', 'Admin Dashboard'],
     tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-    thumb: 'assets/proj_ecommerce_1790479293551.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_ecommerce_1790479293551.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Store', span: 'span-4'
   },
   {
     num: '06', code: 'SMART AGRI', category: 'AI / IOT / AGRICULTURE',
@@ -66,7 +66,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Sensors', 'Data', 'Analysis', 'Recommendation', 'Farmer'],
     features: ['Soil monitoring', 'Temperature tracking', 'ML Crop Recommendations', 'Live Dashboard'],
     tags: ['Python', 'IoT', 'MQTT', 'TensorFlow', 'React'],
-    thumb: 'assets/proj_agri_1790479309851.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
+    thumb: 'assets/proj_agri_1790479309851.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore System', span: 'span-8'
   },
   {
     num: '07', code: 'SMART PARKING', category: 'AI / IOT / SMART CITY',
@@ -76,7 +76,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Vehicle', 'Detection', 'Slot Availability', 'Reservation', 'Parking'],
     features: ['Computer Vision slot detection', 'Real-time availability', 'Mobile reservation app', 'Analytics'],
     tags: ['Python', 'OpenCV', 'IoT', 'React', 'Flask'],
-    thumb: 'assets/proj_parking_1790479321897.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-7'
+    thumb: 'assets/proj_parking_1790479321897.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Parking', span: 'span-7'
   },
   {
     num: '08', code: 'HOSPITAL MGMT', category: 'SOFTWARE / MANAGEMENT',
@@ -86,7 +86,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Patient', 'Appointment', 'Doctor', 'Record', 'Billing'],
     features: ['Patient Registration', 'Doctor Scheduling', 'Medical Records', 'Billing generation'],
     tags: ['Java', 'MySQL', 'JavaFX'],
-    thumb: 'assets/proj_hospital_1790479373830.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-5'
+    thumb: 'assets/proj_hospital_1790479373830.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore System', span: 'span-5'
   },
   {
     num: '09', code: 'SMART BILLING', category: 'WEB / BUSINESS',
@@ -96,7 +96,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Product', 'Cart', 'Bill', 'Payment', 'Inventory'],
     features: ['Tamil language support', 'Barcode scanning', 'Inventory tracking', 'Sales analytics'],
     tags: ['React', 'Node.js', 'SQLite', 'Electron'],
-    thumb: 'assets/proj_billing_1790479387801.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_billing_1790479387801.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore POS', span: 'span-4'
   },
   {
     num: '10', code: 'AI CHATBOT', category: 'AI / NLP / WEB',
@@ -106,7 +106,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'Input', 'AI Processing', 'Response'],
     features: ['Context management', 'Real-time response streaming', 'Transformer NLP', 'Custom personality tuning'],
     tags: ['Python', 'Transformers', 'FastAPI', 'React'],
-    thumb: 'assets/proj_nav_bot.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_nav_bot.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Chatbot', span: 'span-4'
   },
   {
     num: '11', code: 'TRAVEL PLAN', category: 'WEB / PLANNING',
@@ -116,7 +116,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Destination', 'Plan', 'Explore', 'Itinerary', 'Trip'],
     features: ['Interactive mapping', 'Itinerary building', 'Activity suggestions', 'Budget tracking'],
     tags: ['React', 'Google Maps API', 'Node.js', 'MongoDB'],
-    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Travel', span: 'span-4'
   },
   {
     num: '12', code: 'SMART CALC', category: 'WEB / JAVASCRIPT',
@@ -126,7 +126,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Input', 'Expression', 'Evaluate', 'History'],
     features: ['Keyboard access', 'Animated transitions', 'Calculation history', 'Responsive UI'],
     tags: ['HTML', 'CSS', 'Vanilla JS'],
-    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Calc', span: 'span-6'
   },
   {
     num: '13', code: 'LOST & FOUND', category: 'JAVA / MANAGEMENT',
@@ -136,7 +136,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
     features: ['Item registration', 'Automatic matching', 'User notifications', 'Database persistence'],
     tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
-    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore System', span: 'span-6'
   },
   {
     num: '14', code: 'DATA STORIES', category: 'DATA SCIENCE / VISUALIZATION',
@@ -146,7 +146,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Raw Data', 'Transformation', 'Analysis', 'Visualization', 'Insight'],
     features: ['Statistical analysis', 'Bar & Scatter plots', 'Heatmap generation', 'Data cleaning'],
     tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter'],
-    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
+    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Data', span: 'span-8'
   },
   {
     num: '15', code: 'PORTFOLIO 2.0', category: 'WEB / CREATIVE DEVELOPMENT',
@@ -156,7 +156,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Design System', 'Component Layout', 'Scroll Reveal', 'Modal System', 'Canvas Particles'],
     features: ['Particle canvas', 'Spring-physics cursor', 'Bento-grid', 'GSAP ScrollTrigger', 'Lenis Smooth Scroll'],
     tags: ['HTML5', 'CSS3', 'Vanilla JS', 'GSAP', 'Lenis', 'Three.js'],
-    thumb: 'assets/proj_portfolio.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'You Are Here', span: 'span-4'
+    thumb: 'assets/proj_portfolio.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'Explore Portfolio', span: 'span-4'
   }
 ];
 
@@ -171,55 +171,38 @@ const SKILL_CATEGORIES = [
 ];
 
 /* ============ JOURNEY ============ */
-const JOURNEY_NODES = [
+const JOURNEY_STEPS = [
   {
-    year: '2020',
-    label: 'SSLC',
-    title: 'Class X — School',
-    body: 'Strong academic foundation in mathematics and science. First exposure to programming basics.',
+    year: '2022–2023',
+    badge: 'SSLC',
+    title: 'SSLC',
+    place: 'Vethaloga Vidhyalaya Matriculation Higher Secondary School',
+    desc: 'Completed secondary education with strong fundamentals in mathematics and science. Developed early algorithmic problem-solving interest.',
     accent: false,
   },
   {
-    year: '2022',
-    label: 'HSC',
-    title: 'Class XII — School',
-    body: 'Completed senior secondary with physics, math, and computer science. Algorithmic thinking begins.',
+    year: '2023–2025',
+    badge: 'HSC',
+    title: 'HSC',
+    place: 'Little Angel Higher Secondary School',
+    desc: 'Completed higher secondary education in Physics, Chemistry, Mathematics, and Computer Science. Initiated hands-on coding and software development.',
     accent: false,
   },
   {
-    year: '2022',
-    label: 'B.TECH START',
-    title: 'Joined KPRIET',
-    body: 'B.Tech Artificial Intelligence & Data Science at KPR Institute of Engineering and Technology, Coimbatore.',
+    year: '2025–2029',
+    badge: 'B.TECH AI & DS',
+    title: 'B.Tech AI & Data Science',
+    place: 'KPR College of Engineering and Technology',
+    desc: 'Pursuing undergraduate degree in Artificial Intelligence & Data Science. Deep focus on machine learning algorithms, deep neural nets, and data architecture.',
     accent: true,
   },
   {
-    year: '2024',
-    label: 'AI / DATA',
-    title: 'Projects in AI and Web',
-    body: 'Built 10+ projects covering ML, NLP, computer vision, e-commerce, edtech, and management systems.',
-    accent: false,
-  },
-  {
-    year: '2025',
-    label: 'HACKATHON',
-    title: 'Smart India Hackathon',
-    body: 'Developed advanced solutions under competitive pressure — autonomous systems and blockchain platforms.',
+    year: '2026–Present',
+    badge: 'INNOVATION',
+    title: 'Building AI, Data Science, Web & Robotics Projects',
+    place: 'Autonomous Systems & Applied Engineering',
+    desc: 'Engineering autonomous campus delivery robots (KUTTY), blockchain trust platforms, computer vision applications, and full-stack software.',
     accent: true,
-  },
-  {
-    year: '2025',
-    label: 'ROBOTICS',
-    title: 'Autonomous Robotics',
-    body: 'KUTTY campus delivery robot — fusing SLAM, A* pathfinding, computer vision, and multi-sensor control.',
-    accent: true,
-  },
-  {
-    year: '2026',
-    label: 'PRESENT',
-    title: 'Final Year',
-    body: 'Completing B.Tech AI & DS. Focused on autonomous systems, full-stack AI, and open to opportunities.',
-    accent: false,
   },
 ];
 
@@ -400,6 +383,7 @@ function buildWorks() {
   const grid = document.getElementById('works-grid');
   if (!grid) return;
 
+  grid.innerHTML = '';
   FEATURED_PROJECTS.forEach((p, i) => {
     const card = document.createElement('article');
     card.className = `work-card ${p.span} reveal-up`;
@@ -420,7 +404,7 @@ function buildWorks() {
       </div>
       <div class="work-body">
         <div class="work-body-top">
-          <span class="work-num mono-sm">${p.num}</span>
+          <span class="work-num">${p.num}</span>
           <span class="work-code">${p.code}</span>
         </div>
         <span class="work-category">${p.category}</span>
@@ -429,11 +413,7 @@ function buildWorks() {
         <div class="work-footer">
           <div class="work-tags">${p.tags.slice(0, 4).map(t => `<span class="work-tag">${t}</span>`).join('')}</div>
           <div class="work-actions">
-            <a class="work-gh-link" href="${p.github || 'https://github.com/nandha97151-lab'}" target="_blank" rel="noopener" title="View on GitHub" onclick="event.stopPropagation()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-              GitHub
-            </a>
-            <span class="work-cta-hint" onclick="event.stopPropagation();">${p.cta} &rarr;</span>
+            <span class="work-cta-hint">${p.cta} &rarr;</span>
           </div>
         </div>
       </div>
@@ -442,7 +422,6 @@ function buildWorks() {
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(p, 'featured'); });
     grid.appendChild(card);
   });
-
 
   initReveal();
 }
@@ -565,6 +544,44 @@ function buildSkills() {
       </div>
     `;
     flow.appendChild(section);
+  });
+}
+
+/* ===================================================
+   JOURNEY TIMELINE (Vertical Stack)
+=================================================== */
+function buildJourney() {
+  const container = document.getElementById('journey-timeline');
+  if (!container) return;
+
+  container.innerHTML = '';
+  JOURNEY_STEPS.forEach((step, idx) => {
+    const isLast = idx === JOURNEY_STEPS.length - 1;
+    const el = document.createElement('div');
+    el.className = `journey-step${step.accent ? ' accent' : ''} reveal-up`;
+    el.style.setProperty('--d', idx);
+
+    el.innerHTML = `
+      <div class="j-step-left">
+        <div class="j-year">${step.year}</div>
+        <div class="j-badge">${step.badge}</div>
+      </div>
+      <div class="j-step-spine" aria-hidden="true">
+        <div class="j-dot"></div>
+        <div class="j-line"></div>
+        ${!isLast ? '<div class="j-arrow-down">&darr;</div>' : ''}
+      </div>
+      <div class="j-step-card">
+        <div class="j-mobile-meta">
+          <span class="j-year">${step.year}</span>
+          <span class="j-badge">${step.badge}</span>
+        </div>
+        <h3 class="j-card-title">${step.title}</h3>
+        <span class="j-card-place">${step.place}</span>
+        <p class="j-card-desc">${step.desc}</p>
+      </div>
+    `;
+    container.appendChild(el);
   });
 }
 
@@ -734,6 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   buildWorks();
   buildSkills();
+  buildJourney();
   initModal();
   initBackTop();
   initAwwwards();
