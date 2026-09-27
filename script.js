@@ -106,7 +106,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'Input', 'AI Processing', 'Response'],
     features: ['Context management', 'Real-time response streaming', 'Transformer NLP', 'Custom personality tuning'],
     tags: ['Python', 'Transformers', 'FastAPI', 'React'],
-    thumb: 'assets/proj_kutty.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
     num: '11', code: 'TRAVEL PLAN', category: 'WEB / PLANNING',
@@ -116,7 +116,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Destination', 'Plan', 'Explore', 'Itinerary', 'Trip'],
     features: ['Interactive mapping', 'Itinerary building', 'Activity suggestions', 'Budget tracking'],
     tags: ['React', 'Google Maps API', 'Node.js', 'MongoDB'],
-    thumb: 'assets/proj_ecommerce_1790479293551.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_nav_bot.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
     num: '12', code: 'SMART CALC', category: 'WEB / JAVASCRIPT',
@@ -126,7 +126,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Input', 'Expression', 'Evaluate', 'History'],
     features: ['Keyboard access', 'Animated transitions', 'Calculation history', 'Responsive UI'],
     tags: ['HTML', 'CSS', 'Vanilla JS'],
-    thumb: 'assets/proj_campus_1790479280224.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/projects/solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
     num: '13', code: 'LOST & FOUND', category: 'JAVA / MANAGEMENT',
@@ -136,7 +136,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
     features: ['Item registration', 'Automatic matching', 'User notifications', 'Database persistence'],
     tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
-    thumb: 'assets/proj_hospital_1790479373830.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/projects/air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
     num: '14', code: 'DATA STORIES', category: 'DATA SCIENCE / VISUALIZATION',
@@ -146,7 +146,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Raw Data', 'Transformation', 'Analysis', 'Visualization', 'Insight'],
     features: ['Statistical analysis', 'Bar & Scatter plots', 'Heatmap generation', 'Data cleaning'],
     tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter'],
-    thumb: 'assets/proj_blockchain.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
+    thumb: 'assets/proj_predictive_ml.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
   },
   {
     num: '15', code: 'PORTFOLIO 2.0', category: 'WEB / CREATIVE DEVELOPMENT',
@@ -162,14 +162,66 @@ const FEATURED_PROJECTS = [
 
 /* ============ SKILLS ============ */
 const SKILL_CATEGORIES = [
-  { name: 'Machine Learning & AI',   skills: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'SHAP', 'Pandas', 'NumPy'] },
-  { name: 'Computer Vision',         skills: ['OpenCV', 'YOLOv8', 'MediaPipe', 'Roboflow', 'Detectron2'] },
-  { name: 'Robotics & Embedded',     skills: ['ROS2', 'SLAM', 'A* Pathfinding', 'Raspberry Pi 5', 'ESP32', 'Arduino', 'RPLiDAR'] },
-  { name: 'Blockchain & Security',   skills: ['Solidity', 'Web3.js', 'IPFS', 'Smart Contracts', 'DID', 'Cryptography'] },
-  { name: 'Web Development',         skills: ['React', 'Node.js', 'FastAPI', 'Flask', 'HTML5', 'CSS3', 'JavaScript'] },
-  { name: 'Data & Tools',            skills: ['SQL', 'MongoDB', 'Jupyter', 'Docker', 'Git', 'Linux', 'Matplotlib', 'Seaborn'] },
+  { name: 'Machine Learning & AI', skills: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'SHAP', 'Pandas', 'NumPy'] },
+  { name: 'Computer Vision', skills: ['OpenCV', 'YOLOv8', 'MediaPipe', 'Roboflow', 'Detectron2'] },
+  { name: 'Robotics & Embedded', skills: ['ROS2', 'SLAM', 'A* Pathfinding', 'Raspberry Pi 5', 'ESP32', 'Arduino', 'RPLiDAR'] },
+  { name: 'Blockchain & Security', skills: ['Solidity', 'Web3.js', 'IPFS', 'Smart Contracts', 'DID', 'Cryptography'] },
+  { name: 'Web Development', skills: ['React', 'Node.js', 'FastAPI', 'Flask', 'HTML5', 'CSS3', 'JavaScript'] },
+  { name: 'Data & Tools', skills: ['SQL', 'MongoDB', 'Jupyter', 'Docker', 'Git', 'Linux', 'Matplotlib', 'Seaborn'] },
 ];
 
+/* ============ JOURNEY ============ */
+const JOURNEY_NODES = [
+  {
+    year: '2020',
+    label: 'SSLC',
+    title: 'Class X — School',
+    body: 'Strong academic foundation in mathematics and science. First exposure to programming basics.',
+    accent: false,
+  },
+  {
+    year: '2022',
+    label: 'HSC',
+    title: 'Class XII — School',
+    body: 'Completed senior secondary with physics, math, and computer science. Algorithmic thinking begins.',
+    accent: false,
+  },
+  {
+    year: '2022',
+    label: 'B.TECH START',
+    title: 'Joined KPRIET',
+    body: 'B.Tech Artificial Intelligence & Data Science at KPR Institute of Engineering and Technology, Coimbatore.',
+    accent: true,
+  },
+  {
+    year: '2024',
+    label: 'AI / DATA',
+    title: 'Projects in AI and Web',
+    body: 'Built 10+ projects covering ML, NLP, computer vision, e-commerce, edtech, and management systems.',
+    accent: false,
+  },
+  {
+    year: '2025',
+    label: 'HACKATHON',
+    title: 'Smart India Hackathon',
+    body: 'Developed advanced solutions under competitive pressure — autonomous systems and blockchain platforms.',
+    accent: true,
+  },
+  {
+    year: '2025',
+    label: 'ROBOTICS',
+    title: 'Autonomous Robotics',
+    body: 'KUTTY campus delivery robot — fusing SLAM, A* pathfinding, computer vision, and multi-sensor control.',
+    accent: true,
+  },
+  {
+    year: '2026',
+    label: 'PRESENT',
+    title: 'Final Year',
+    body: 'Completing B.Tech AI & DS. Focused on autonomous systems, full-stack AI, and open to opportunities.',
+    accent: false,
+  },
+];
 
 /* ===================================================
    CURSOR
@@ -177,14 +229,14 @@ const SKILL_CATEGORIES = [
 function initCursor() {
   const cursor = document.getElementById('cursor');
   if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
-  const dot  = cursor.querySelector('.cursor-dot');
+  const dot = cursor.querySelector('.cursor-dot');
   const ring = cursor.querySelector('.cursor-ring');
   let mx = -100, my = -100, rx = -100, ry = -100;
   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
   function tick() {
     rx += (mx - rx) * 0.12;
     ry += (my - ry) * 0.12;
-    dot.style.transform  = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+    dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
     ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
     requestAnimationFrame(tick);
   }
@@ -235,34 +287,34 @@ function initThreeCanvas() {
 
   // Neural Core geometry
   const geometry = new THREE.IcosahedronGeometry(2, 3);
-  
+
   // Create points
-  const pointsMaterial = new THREE.PointsMaterial({ 
-    color: 0xc9382b, 
+  const pointsMaterial = new THREE.PointsMaterial({
+    color: 0xc9382b,
     size: 0.03,
     transparent: true,
     opacity: 0.8
   });
   const points = new THREE.Points(geometry, pointsMaterial);
-  
+
   // Create wireframe connecting the nodes
-  const wireMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xc9382b, 
-    wireframe: true, 
-    transparent: true, 
-    opacity: 0.15 
+  const wireMaterial = new THREE.MeshBasicMaterial({
+    color: 0xc9382b,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.15
   });
   const wire = new THREE.Mesh(geometry, wireMaterial);
 
   const group = new THREE.Group();
   group.add(points);
   group.add(wire);
-  
+
   // Add some ambient particles
   const particleGeo = new THREE.BufferGeometry();
   const particleCount = 200;
   const posArray = new Float32Array(particleCount * 3);
-  for(let i=0; i<particleCount * 3; i++) {
+  for (let i = 0; i < particleCount * 3; i++) {
     posArray[i] = (Math.random() - 0.5) * 10;
   }
   particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -290,13 +342,13 @@ function initThreeCanvas() {
   function animate() {
     frame = requestAnimationFrame(animate);
     const elapsedTime = clock.getElapsedTime();
-    
+
     targetX = mouseX * 0.001;
     targetY = mouseY * 0.001;
 
     group.rotation.y += 0.002;
     group.rotation.x += 0.001;
-    
+
     // Neural core breathing effect
     const scale = 1 + Math.sin(elapsedTime * 2) * 0.05;
     points.scale.set(scale, scale, scale);
@@ -305,7 +357,7 @@ function initThreeCanvas() {
     // Parallax mouse movement
     group.rotation.x += 0.05 * (targetY - group.rotation.x);
     group.rotation.y += 0.05 * (targetX - group.rotation.y);
-    
+
     // Float effect
     group.position.y = Math.sin(elapsedTime) * 0.2;
 
@@ -370,7 +422,7 @@ function buildWorks() {
         <h3 class="work-title">${p.title}</h3>
         <p class="work-desc">${p.subtitle}</p>
         <div class="work-footer">
-          <div class="work-tags">${p.tags.slice(0,4).map(t => `<span class="work-tag">${t}</span>`).join('')}</div>
+          <div class="work-tags">${p.tags.slice(0, 4).map(t => `<span class="work-tag">${t}</span>`).join('')}</div>
           <span class="work-cta-hint">${p.cta} &rarr;</span>
         </div>
       </div>
@@ -391,7 +443,7 @@ function buildWorks() {
    MODAL
 =================================================== */
 function initModal() {
-  const modal    = document.getElementById('project-modal');
+  const modal = document.getElementById('project-modal');
   const backdrop = document.getElementById('modal-backdrop');
   const closeBtn = document.getElementById('modal-close');
   if (!modal) return;
@@ -403,20 +455,20 @@ function initModal() {
 }
 
 function openModal(project, type) {
-  const modal     = document.getElementById('project-modal');
-  const numEl     = document.getElementById('modal-num');
-  const catEl     = document.getElementById('modal-category');
-  const titleEl   = document.getElementById('modal-title');
-  const subEl     = document.getElementById('modal-subtitle');
-  const tagsEl    = document.getElementById('modal-tags');
+  const modal = document.getElementById('project-modal');
+  const numEl = document.getElementById('modal-num');
+  const catEl = document.getElementById('modal-category');
+  const titleEl = document.getElementById('modal-title');
+  const subEl = document.getElementById('modal-subtitle');
+  const tagsEl = document.getElementById('modal-tags');
   const actionsEl = document.getElementById('modal-actions');
-  const visualEl  = document.getElementById('modal-visual');
-  const csEl      = document.getElementById('cs-sections');
+  const visualEl = document.getElementById('modal-visual');
+  const csEl = document.getElementById('cs-sections');
 
-  numEl.textContent   = `${project.num}`;
-  catEl.textContent   = project.category;
+  numEl.textContent = `${project.num}`;
+  catEl.textContent = project.category;
   titleEl.textContent = project.title;
-  subEl.textContent   = project.subtitle || '';
+  subEl.textContent = project.subtitle || '';
 
   // Thumb
   if (project.thumb) {
@@ -492,7 +544,7 @@ function buildSkills() {
     section.innerHTML = `
       <div class="skill-cat-header">
         <span class="skill-cat-name">${cat.name}</span>
-        <span class="skill-cat-count mono-sm">${String(cat.skills.length).padStart(2,'0')}</span>
+        <span class="skill-cat-count mono-sm">${String(cat.skills.length).padStart(2, '0')}</span>
       </div>
       <div class="skill-pills">
         ${cat.skills.map(s => `<span class="skill-pill">${s}</span>`).join('')}
@@ -562,13 +614,13 @@ function initAwwwards() {
       smoothTouch: false,
       touchMultiplier: 2,
     });
-    
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-    
+
     // Connect Lenis with GSAP ScrollTrigger
     if (typeof ScrollTrigger !== 'undefined') {
       lenis.on('scroll', ScrollTrigger.update);
@@ -582,7 +634,7 @@ function initAwwwards() {
   // Preloader Sequence
   if (typeof gsap !== 'undefined') {
     const tl = gsap.timeline();
-    
+
     const counterObj = { val: 0 };
     tl.to(counterObj, {
       val: 100,
@@ -647,11 +699,11 @@ function initAwwwards() {
         const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
         const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
         gsap.to(magneticBtn, { x, y, duration: 0.5, ease: 'power2.out' });
-        if(text) gsap.to(text, { x: x * 0.5, y: y * 0.5, duration: 0.5, ease: 'power2.out' });
+        if (text) gsap.to(text, { x: x * 0.5, y: y * 0.5, duration: 0.5, ease: 'power2.out' });
       });
       magneticBtn.addEventListener('mouseleave', () => {
         gsap.to(magneticBtn, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
-        if(text) gsap.to(text, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
+        if (text) gsap.to(text, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
       });
     }
   }
