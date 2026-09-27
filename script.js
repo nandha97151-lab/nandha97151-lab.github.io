@@ -475,12 +475,14 @@ function openModal(project, type) {
   titleEl.textContent = project.title;
   subEl.textContent = project.subtitle || '';
 
-  // Thumb
-  if (project.thumb) {
-    visualEl.innerHTML = `<img src="${project.thumb}" alt="${project.title}" class="modal-img">`;
-  } else {
-    visualEl.innerHTML = `<div class="modal-img-placeholder"><span>${project.num}</span></div>`;
-  }
+  // Thumb — always show fallback behind, fade in image on load
+  visualEl.innerHTML = `
+    <div class="modal-img-fallback">
+      <span class="modal-img-fallback-num">${project.num}</span>
+      <span class="modal-img-fallback-code">${project.code}</span>
+    </div>
+    ${project.thumb ? `<img src="${project.thumb}" alt="${project.title}" class="modal-img" onload="this.classList.add('loaded')">` : ''}
+  `;
 
   // Case study body
   csEl.innerHTML = `
