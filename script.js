@@ -106,7 +106,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'Input', 'AI Processing', 'Response'],
     features: ['Context management', 'Real-time response streaming', 'Transformer NLP', 'Custom personality tuning'],
     tags: ['Python', 'Transformers', 'FastAPI', 'React'],
-    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_nav_bot.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
     num: '11', code: 'TRAVEL PLAN', category: 'WEB / PLANNING',
@@ -116,7 +116,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Destination', 'Plan', 'Explore', 'Itinerary', 'Trip'],
     features: ['Interactive mapping', 'Itinerary building', 'Activity suggestions', 'Budget tracking'],
     tags: ['React', 'Google Maps API', 'Node.js', 'MongoDB'],
-    thumb: 'assets/proj_nav_bot.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
     num: '12', code: 'SMART CALC', category: 'WEB / JAVASCRIPT',
@@ -126,7 +126,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Input', 'Expression', 'Evaluate', 'History'],
     features: ['Keyboard access', 'Animated transitions', 'Calculation history', 'Responsive UI'],
     tags: ['HTML', 'CSS', 'Vanilla JS'],
-    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
     num: '13', code: 'LOST & FOUND', category: 'JAVA / MANAGEMENT',
@@ -136,7 +136,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
     features: ['Item registration', 'Automatic matching', 'User notifications', 'Database persistence'],
     tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
-    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
     num: '14', code: 'DATA STORIES', category: 'DATA SCIENCE / VISUALIZATION',
@@ -146,7 +146,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Raw Data', 'Transformation', 'Analysis', 'Visualization', 'Insight'],
     features: ['Statistical analysis', 'Bar & Scatter plots', 'Heatmap generation', 'Data cleaning'],
     tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter'],
-    thumb: 'assets/proj_predictive_ml.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
+    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
   },
   {
     num: '15', code: 'PORTFOLIO 2.0', category: 'WEB / CREATIVE DEVELOPMENT',
@@ -156,7 +156,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Design System', 'Component Layout', 'Scroll Reveal', 'Modal System', 'Canvas Particles'],
     features: ['Particle canvas', 'Spring-physics cursor', 'Bento-grid', 'GSAP ScrollTrigger', 'Lenis Smooth Scroll'],
     tags: ['HTML5', 'CSS3', 'Vanilla JS', 'GSAP', 'Lenis', 'Three.js'],
-    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'You Are Here', span: 'span-4'
+    thumb: 'assets/proj_portfolio.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'You Are Here', span: 'span-4'
   }
 ];
 
