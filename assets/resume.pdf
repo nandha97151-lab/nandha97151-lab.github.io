@@ -1,0 +1,104 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1743 >>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(NANDHAKUMAR N) Tj
+/F1 14 Tf
+0 -30 Td
+(B.Tech - Artificial Intelligence & Data Science) Tj
+/F1 11 Tf
+0 -20 Td
+(Email: nandha97151@gmail.com  |  GitHub: github.com/nandha97151-lab  |  LinkedIn: linkedin.com/in/nandhakumar1234) Tj
+
+0 -35 Td
+/F1 16 Tf
+(EDUCATION) Tj
+/F1 11 Tf
+0 -20 Td
+(KPR Institute of Engineering and Technology | 2025 - 2029) Tj
+0 -15 Td
+(B.Tech Artificial Intelligence and Data Science) Tj
+
+0 -35 Td
+/F1 16 Tf
+(SKILLS) Tj
+/F1 11 Tf
+0 -20 Td
+(Programming: Python, C, JavaScript, SQL) Tj
+0 -15 Td
+(AI & Data Science: Machine Learning, Computer Vision, NumPy, Pandas, Matplotlib) Tj
+0 -15 Td
+(Web & Tools: HTML5, CSS3, JavaScript, Git, GitHub, VS Code, Linux) Tj
+
+0 -35 Td
+/F1 16 Tf
+(PROJECTS) Tj
+/F1 12 Tf
+0 -20 Td
+(1. Kutty Labs - Autonomous AI Campus Delivery Robot) Tj
+/F1 10 Tf
+0 -15 Td
+(   Integrated Raspberry Pi & ESP32, SLAM navigation, LiDAR sensor fusion & computer vision.) Tj
+
+/F1 12 Tf
+0 -20 Td
+(2. Air Drawing AI - OpenCV & MediaPipe Gesture Drawing) Tj
+/F1 10 Tf
+0 -15 Td
+(   Webcam hand tracking with 21 landmark points, smooth stroke rasterization & gesture recognition.) Tj
+
+/F1 12 Tf
+0 -20 Td
+(3. Smart Solar Tracker - IoT Energy System) Tj
+/F1 10 Tf
+0 -15 Td
+(   Arduino & ESP8266 solar alignment with LDR sensors & dynamic Blynk telemetry dashboard.) Tj
+
+/F1 12 Tf
+0 -20 Td
+(4. Tamil Billing System - Vernacular Retail Web App) Tj
+/F1 10 Tf
+0 -15 Td
+(   Regional UI billing software with local GST calculation, barcode lookup & receipt printing.) Tj
+
+0 -35 Td
+/F1 16 Tf
+(CERTIFICATIONS & HONORS) Tj
+/F1 10 Tf
+0 -20 Td
+(- Innovation Summit & Project Challenge 2025) Tj
+0 -15 Td
+(- PromptBattle Generative AI 2025) Tj
+0 -15 Td
+(- AnimArena Showcase & Code War Algorithmic Battle) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000244 00000 n 
+0000000295 + 1743 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2093
+%%EOF
