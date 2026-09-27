@@ -4,71 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nandhakumar N — AI &amp; Data Science</title>
-  <meta name="description" content="Portfolio of Nandhakumar N, B.Tech Artificial Intelligence &amp; Data Science student at KPRIET. Building intelligent systems in robotics, computer vision, and machine learning.">
-
-  <!-- SEO & OpenGraph -->
+  <meta name="description" content="Portfolio of Nandhakumar N, B.Tech Artificial Intelligence &amp; Data Science at KPRIET. Building autonomous robots, blockchain systems, and intelligent web platforms.">
   <meta property="og:title" content="Nandhakumar N — AI &amp; Data Science">
-  <meta property="og:description" content="Portfolio of Nandhakumar N — building intelligent systems at the intersection of code, data, and machine perception.">
+  <meta property="og:description" content="15 projects spanning robotics, blockchain, edtech, AI, and smart systems.">
   <meta property="og:type" content="website">
-
-  <!-- Fonts: Self-hosted via Google Fonts preconnect (no CDN in production) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Film Grain Overlay -->
   <div class="film-grain" aria-hidden="true"></div>
-
-  <!-- Custom Cursor -->
   <div class="cursor" id="cursor" aria-hidden="true">
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
   </div>
 
-  <!-- ===================== NAVIGATION ===================== -->
+  <!-- NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo" id="nav-logo">NK</a>
-
-      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#works" class="nav-link">Works</a>
-        <a href="#skills" class="nav-link">Skills</a>
+      <a href="#hero" class="nav-logo">NK</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about"   class="nav-link">About</a>
+        <a href="#works"   class="nav-link">Works</a>
+        <a href="#skills"  class="nav-link">Skills</a>
         <a href="#journey" class="nav-link">Journey</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
-
       <a href="assets/resume.pdf" class="btn btn-outline nav-resume" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
     <nav class="mobile-nav-links">
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#works" class="mobile-link">Works</a>
-      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#about"   class="mobile-link">About</a>
+      <a href="#works"   class="mobile-link">Works</a>
+      <a href="#skills"  class="mobile-link">Skills</a>
       <a href="#journey" class="mobile-link">Journey</a>
       <a href="#contact" class="mobile-link">Contact</a>
-      <a href="assets/resume.pdf" class="mobile-link" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+      <a href="assets/resume.pdf" class="mobile-link" download target="_blank" rel="noopener">Resume PDF</a>
     </nav>
   </div>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- HERO -->
   <section class="hero" id="hero" aria-label="Hero">
     <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-glow" aria-hidden="true"></div>
-
     <div class="hero-inner">
-      <!-- Left: Text Block -->
       <div class="hero-text">
         <p class="hero-mono reveal-up" style="--d:0">B.TECH ARTIFICIAL INTELLIGENCE &amp; DATA SCIENCE</p>
         <h1 class="hero-name reveal-up" id="hero-title" style="--d:1">
@@ -81,21 +67,17 @@
           <a href="#contact" class="btn btn-ghost">Get in Touch</a>
         </div>
       </div>
-
-      <!-- Right: Profile Frame -->
       <div class="hero-visual reveal-up" style="--d:2" aria-hidden="true">
         <div class="profile-hex-wrap">
-          <svg class="hex-svg" viewBox="0 0 320 370" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="hex-svg" viewBox="0 0 320 370" fill="none">
             <polygon points="160,8 308,92 308,278 160,362 12,278 12,92" stroke="#c9382b" stroke-width="1.5" fill="none"/>
             <polygon points="160,24 294,100 294,270 160,346 26,270 26,100" stroke="#c9382b" stroke-width="0.5" fill="none" opacity="0.3"/>
           </svg>
           <div class="profile-img-wrap">
-            <img src="assets/profile_sticker.png" alt="Nandhakumar N" class="profile-img" id="profile-img">
+            <img src="assets/profile_sticker.png" alt="Nandhakumar N" class="profile-img">
           </div>
           <div class="hex-glow" aria-hidden="true"></div>
         </div>
-
-        <!-- HUD coordinates -->
         <div class="hud-tag hud-top-right">
           <span class="hud-line">LAT: 11.0168°N</span>
           <span class="hud-line">LON: 76.9558°E</span>
@@ -108,10 +90,9 @@
     </div>
   </section>
 
-  <!-- ===================== ABOUT ===================== -->
+  <!-- ABOUT -->
   <section class="about" id="about" aria-label="About">
     <div class="container">
-      <!-- Full-width statement -->
       <div class="about-statement">
         <h2 class="about-heading reveal-up">
           Building <em>intelligent</em><br>systems that think.
@@ -124,64 +105,61 @@
             My engineering philosophy: learn the fundamentals deeply, build prototypes fast, and iterate until the solution is reliable and elegant.
           </p>
           <div class="about-meta reveal-up" style="--d:3">
-            <div class="meta-item">
-              <span class="meta-val">KPRIET</span>
-              <span class="meta-key">Institution</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-val">2022–2026</span>
-              <span class="meta-key">Batch</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-val">AI &amp; DS</span>
-              <span class="meta-key">Discipline</span>
-            </div>
+            <div class="meta-item"><span class="meta-val">KPRIET</span><span class="meta-key">Institution</span></div>
+            <div class="meta-item"><span class="meta-val">2022–2026</span><span class="meta-key">Batch</span></div>
+            <div class="meta-item"><span class="meta-val">15+</span><span class="meta-key">Projects</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== WORKS ===================== -->
+  <!-- FEATURED WORKS -->
   <section class="works" id="works" aria-label="Selected Works">
     <div class="container">
       <h2 class="section-heading reveal-up">Selected Works</h2>
-
-      <div class="works-grid" id="works-grid">
-        <!-- Populated by script.js -->
-      </div>
-    </div>
-
-    <!-- Project Modal -->
-    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
-      <div class="modal-backdrop" id="modal-backdrop"></div>
-      <div class="modal-panel">
-        <button class="modal-close" id="modal-close" aria-label="Close project">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-        </button>
-        <div class="modal-body">
-          <div class="modal-visual">
-            <img src="" alt="" id="modal-img" class="modal-img">
-          </div>
-          <div class="modal-info">
-            <span class="modal-category" id="modal-category"></span>
-            <h3 class="modal-title" id="modal-title"></h3>
-            <p class="modal-desc" id="modal-desc"></p>
-            <div class="modal-tags" id="modal-tags"></div>
-            <a href="#" class="btn btn-primary modal-link" id="modal-link" target="_blank" rel="noopener">View on GitHub</a>
-          </div>
-        </div>
-      </div>
+      <div class="works-grid" id="works-grid"></div>
     </div>
   </section>
 
-  <!-- ===================== SKILLS ===================== -->
+  <!-- PROJECT ARCHIVE -->
+  <section class="archive" id="archive" aria-label="Project Archive">
+    <div class="container">
+      <h2 class="section-heading reveal-up">More Experiments</h2>
+      <div class="archive-list" id="archive-list"></div>
+    </div>
+  </section>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modal-close" aria-label="Close project">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+      <div class="modal-body">
+        <div class="modal-visual" id="modal-visual"></div>
+        <div class="modal-info">
+          <div class="modal-meta-row">
+            <span class="modal-num" id="modal-num"></span>
+            <span class="modal-category" id="modal-category"></span>
+          </div>
+          <h3 class="modal-title" id="modal-title"></h3>
+          <p class="modal-subtitle" id="modal-subtitle"></p>
+          <div class="cs-sections" id="cs-sections"></div>
+          <div class="modal-tags" id="modal-tags"></div>
+          <div class="modal-actions" id="modal-actions"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
   <section class="skills" id="skills" aria-label="Technical Skills">
     <div class="container">
       <div class="skills-layout">
-        <!-- Sticky left -->
         <div class="skills-sticky">
           <h2 class="skills-statement">
             <span>CODE IS</span>
@@ -193,38 +171,29 @@
             <span class="mono-sm">SYSTEMS ONLINE</span>
           </div>
         </div>
-
-        <!-- Flowing right -->
-        <div class="skills-flow" id="skills-flow">
-          <!-- Populated by script.js -->
-        </div>
+        <div class="skills-flow" id="skills-flow"></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== JOURNEY ===================== -->
-  <section class="journey" id="journey" aria-label="Education Timeline">
+  <!-- JOURNEY -->
+  <section class="journey" id="journey" aria-label="Journey Timeline">
     <div class="container">
       <h2 class="section-heading reveal-up">My Journey</h2>
-
-      <div class="timeline" id="timeline">
-        <!-- Populated by script.js -->
-      </div>
+    </div>
+    <div class="timeline-h-outer" aria-label="Horizontal timeline">
+      <div class="timeline-h-track" id="timeline-h-track"></div>
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
+  <!-- CONTACT -->
   <section class="contact" id="contact" aria-label="Contact">
     <div class="container">
       <div class="contact-inner">
         <div class="contact-left">
-          <h2 class="contact-heading reveal-up">
-            Let's build something<br>
-            <span class="accent">intelligent.</span>
-          </h2>
+          <h2 class="contact-heading reveal-up">Let's build something<br><span class="accent">intelligent.</span></h2>
           <p class="contact-sub reveal-up" style="--d:1">Have a project, an idea, or an opportunity? Reach out.</p>
         </div>
-
         <div class="contact-links">
           <a href="mailto:nandha97151@gmail.com" class="contact-link reveal-up" style="--d:0" id="contact-email">
             <span class="contact-link-label">Email</span>
@@ -241,7 +210,7 @@
             <span class="contact-link-val">linkedin.com/in/nandhakumar1234</span>
             <span class="contact-link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="assets/resume.pdf" class="contact-link reveal-up" style="--d:3" id="contact-resume" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">
+          <a href="assets/resume.pdf" class="contact-link reveal-up" style="--d:3" id="contact-resume" download target="_blank" rel="noopener">
             <span class="contact-link-label">Resume</span>
             <span class="contact-link-val">Download PDF</span>
             <span class="contact-link-arrow" aria-hidden="true">↓</span>
@@ -251,7 +220,7 @@
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
   <footer class="footer" id="footer">
     <div class="container footer-inner">
       <div class="footer-left">
