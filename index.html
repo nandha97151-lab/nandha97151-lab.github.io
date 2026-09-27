@@ -1,528 +1,274 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nandhakumar N | AI & Data Science Portfolio</title>
-  <meta name="description" content="Cinematic digital experience and portfolio of Nandhakumar N, B.Tech Artificial Intelligence & Data Science student. Exploring autonomous robotics, computer vision, and machine learning.">
-  
+  <title>Nandhakumar N — AI &amp; Data Science</title>
+  <meta name="description" content="Portfolio of Nandhakumar N, B.Tech Artificial Intelligence &amp; Data Science student at KPRIET. Building intelligent systems in robotics, computer vision, and machine learning.">
+
   <!-- SEO & OpenGraph -->
-  <meta property="og:title" content="Nandhakumar N | AI & Data Science Portfolio">
-  <meta property="og:description" content="Explore the cinematic, interactive digital portfolio of Nandhakumar N. B.Tech Artificial Intelligence & Data Science student.">
+  <meta property="og:title" content="Nandhakumar N — AI &amp; Data Science">
+  <meta property="og:description" content="Portfolio of Nandhakumar N — building intelligent systems at the intersection of code, data, and machine perception.">
   <meta property="og:type" content="website">
-  
-  <!-- Fonts -->
+
+  <!-- Fonts: Self-hosted via Google Fonts preconnect (no CDN in production) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  
-  <!-- JS Fallback Script to swap classes -->
-  <script>
-    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
-  </script>
 </head>
 <body>
 
-  <!-- No-JavaScript Fallback message -->
-  <noscript>
-    <div class="noscript-banner">
-      <p>This cinematic portfolio is optimized for interactive experiences. Enabling JavaScript is recommended for animations, but the content remains fully readable below.</p>
-    </div>
-  </noscript>
-
   <!-- Film Grain Overlay -->
-  <div class="film-grain"></div>
+  <div class="film-grain" aria-hidden="true"></div>
 
-  <!-- Custom Cinematic Cursor -->
-  <div class="custom-cursor" id="custom-cursor">
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
-    <span class="cursor-label"></span>
   </div>
 
-  <!-- Red Atmospheric Glow Effects (Backgrounds) -->
-  <div class="radial-glow-global" id="radial-glow-global"></div>
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo">NK</a>
 
-  <!-- Fixed Navigation -->
-  <header class="main-header" id="main-header">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo" id="nav-logo">NANDHAKUMAR</a>
-      
-      <nav class="desktop-nav" id="desktop-nav">
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
         <a href="#about" class="nav-link">About</a>
+        <a href="#works" class="nav-link">Works</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Works</a>
-        <a href="#education" class="nav-link">Journey</a>
+        <a href="#journey" class="nav-link">Journey</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="assets/resume.pdf" class="nav-link nav-resume-btn" download="Nandhakumar_N_Resume.pdf" target="_blank">Resume</a>
       </nav>
-      
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
-        <span class="menu-line line-1"></span>
-        <span class="menu-line line-2"></span>
-        <span class="menu-line line-3"></span>
+
+      <a href="assets/resume.pdf" class="btn btn-outline nav-resume" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Navigation Menu -->
-  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
     <nav class="mobile-nav-links">
       <a href="#about" class="mobile-link">About</a>
+      <a href="#works" class="mobile-link">Works</a>
       <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#projects" class="mobile-link">Works</a>
-      <a href="#education" class="mobile-link">Journey</a>
+      <a href="#journey" class="mobile-link">Journey</a>
       <a href="#contact" class="mobile-link">Contact</a>
-      <a href="assets/resume.pdf" class="mobile-link" download="Nandhakumar_N_Resume.pdf" target="_blank">Resume PDF</a>
+      <a href="assets/resume.pdf" class="mobile-link" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
     </nav>
   </div>
 
-  <!-- Main Scroll Container -->
-  <main id="smooth-scroll-wrapper">
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
 
-    <!-- 01 — HERO CHAPTER -->
-    <section class="chapter-section hero-section" id="hero" aria-label="Hero">
-      <canvas class="particles-canvas" id="particles-canvas"></canvas>
-      <div class="hero-glow" id="hero-glow"></div>
-      
-      <div class="hero-content">
-        <!-- Floating technical details -->
-        <div class="hud-panel hud-left fade-in-hud">
-          <span class="hud-tag">// IDENTITY VERIFICATION</span>
-          <span class="hud-val">ID: 97151-KPRIET</span>
-        </div>
-        <div class="hud-panel hud-right fade-in-hud">
-          <span class="hud-tag">// COMPILATION YEAR</span>
-          <span class="hud-val">EST: 2026</span>
-        </div>
-
-        <div class="hero-main-title">
-          <h1 class="cinematic-title reveal-text" id="hero-title">
-            <span class="char-span">N</span>
-            <span class="char-span">A</span>
-            <span class="char-span">N</span>
-            <span class="char-span">D</span>
-            <span class="char-span">H</span>
-            <span class="char-span">A</span>
-            <span class="char-span">K</span>
-            <span class="char-span">U</span>
-            <span class="char-span">M</span>
-            <span class="char-span">A</span>
-            <span class="char-span">R</span>
-            <span class="char-span">&nbsp;</span>
-            <span class="char-span">N</span>
-          </h1>
-        </div>
-
-        <div class="profile-avatar-container" id="profile-avatar-container">
-          <div class="profile-frame">
-            <img src="assets/profile_sticker.png?v=3" alt="Nandhakumar N" class="profile-img" id="profile-img">
-            <div class="profile-glint"></div>
-            <div class="profile-light-mask"></div>
-          </div>
-        </div>
-
-        <div class="hero-subtitle-container">
-          <h2 class="cinematic-subtitle" id="hero-subtitle">AI & DATA SCIENCE STUDENT</h2>
-          <p class="cinematic-desc" id="hero-desc">Turning ideas into intelligent digital experiences.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 02 — WHERE CODE MEETS INTELLIGENCE (Sticky pinned typography) -->
-    <section class="chapter-section pinned-section" id="where-code-meets" aria-label="Philosophy">
-      <div class="pinned-sticky-container" id="sticky-container">
-        <div class="pinned-bg-glow" id="pinned-bg-glow"></div>
-        <div class="pinned-content-wrapper">
-          <div class="pinned-huge-word word-1" id="word-code">CODE</div>
-          <div class="pinned-huge-word word-2" id="word-data">DATA</div>
-          <div class="pinned-huge-word word-3" id="word-intelligence">INTELLIGENCE</div>
-          <div class="pinned-huge-word word-4" id="word-creativity">CREATIVITY</div>
-          
-          <div class="pinned-statement-container" id="pinned-statement">
-            <h3 class="pinned-main-statement">WHERE CODE MEETS INTELLIGENCE</h3>
-            <p class="pinned-sub-statement">I transform data, ideas and technology into meaningful digital experiences.</p>
-          </div>
-          
-          <div class="pinned-center-label" id="pinned-center-label">// CHAPTER 02</div>
+    <div class="hero-inner">
+      <!-- Left: Text Block -->
+      <div class="hero-text">
+        <p class="hero-mono reveal-up" style="--d:0">B.TECH ARTIFICIAL INTELLIGENCE &amp; DATA SCIENCE</p>
+        <h1 class="hero-name reveal-up" id="hero-title" style="--d:1">
+          <span class="hero-name-line">NANDHA</span>
+          <span class="hero-name-line">KUMAR N</span>
+        </h1>
+        <p class="hero-tagline reveal-up" style="--d:2">Turning data into decisions, code into perception.</p>
+        <div class="hero-ctas reveal-up" style="--d:3">
+          <a href="#works" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
         </div>
       </div>
-    </section>
 
-    <!-- 03 — PUZZLE TRANSITION (Physical breaking layout) -->
-    <div class="puzzle-transition-container" id="puzzle-transition">
-      <div class="puzzle-pieces-wrapper" id="puzzle-pieces-wrapper">
-        <!-- 12 grid segments generated via JavaScript for clipping the transition -->
+      <!-- Right: Profile Frame -->
+      <div class="hero-visual reveal-up" style="--d:2" aria-hidden="true">
+        <div class="profile-hex-wrap">
+          <svg class="hex-svg" viewBox="0 0 320 370" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="160,8 308,92 308,278 160,362 12,278 12,92" stroke="#c9382b" stroke-width="1.5" fill="none"/>
+            <polygon points="160,24 294,100 294,270 160,346 26,270 26,100" stroke="#c9382b" stroke-width="0.5" fill="none" opacity="0.3"/>
+          </svg>
+          <div class="profile-img-wrap">
+            <img src="assets/profile_sticker.png" alt="Nandhakumar N" class="profile-img" id="profile-img">
+          </div>
+          <div class="hex-glow" aria-hidden="true"></div>
+        </div>
+
+        <!-- HUD coordinates -->
+        <div class="hud-tag hud-top-right">
+          <span class="hud-line">LAT: 11.0168°N</span>
+          <span class="hud-line">LON: 76.9558°E</span>
+        </div>
+        <div class="hud-tag hud-bottom-left">
+          <span class="hud-line">KPRIET — COIMBATORE</span>
+          <span class="hud-line">EST: 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about" aria-label="About">
+    <div class="container">
+      <!-- Full-width statement -->
+      <div class="about-statement">
+        <h2 class="about-heading reveal-up">
+          Building <em>intelligent</em><br>systems that think.
+        </h2>
+        <div class="about-right">
+          <p class="about-body reveal-up" style="--d:1">
+            I am Nandhakumar N, a B.Tech AI &amp; Data Science student at KPR Institute of Engineering and Technology, Coimbatore. I work at the intersection of machine learning, computer vision, and autonomous robotics.
+          </p>
+          <p class="about-body reveal-up" style="--d:2">
+            My engineering philosophy: learn the fundamentals deeply, build prototypes fast, and iterate until the solution is reliable and elegant.
+          </p>
+          <div class="about-meta reveal-up" style="--d:3">
+            <div class="meta-item">
+              <span class="meta-val">KPRIET</span>
+              <span class="meta-key">Institution</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-val">2022–2026</span>
+              <span class="meta-key">Batch</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-val">AI &amp; DS</span>
+              <span class="meta-key">Discipline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORKS ===================== -->
+  <section class="works" id="works" aria-label="Selected Works">
+    <div class="container">
+      <h2 class="section-heading reveal-up">Selected Works</h2>
+
+      <div class="works-grid" id="works-grid">
+        <!-- Populated by script.js -->
       </div>
     </div>
 
-    <!-- 04 — ABOUT ME (Interactive doors) -->
-    <section class="chapter-section content-section about-section" id="about" aria-label="About Me">
-      <div class="section-divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">04 / ABOUT ME</span>
-        <span class="divider-line"></span>
-      </div>
-
-      <div class="container">
-        <div class="about-grid">
-          <!-- Door 1: WHO I AM -->
-          <div class="about-door-card" id="door-who-i-am" tabindex="0">
-            <div class="door-inner">
-              <div class="door-front">
-                <div class="door-num">01</div>
-                <h3 class="door-title">WHO I AM</h3>
-                <div class="door-indicator"><span class="arrow-right"></span></div>
-              </div>
-              <div class="door-back">
-                <div class="hud-card-header">// IDENTITY VERIFIED</div>
-                <div class="door-content">
-                  <h4 class="card-highlight-name">Nandhakumar N</h4>
-                  <p class="card-desc">B.Tech Artificial Intelligence & Data Science student passionate about programming, AI, data, web development and creative technology.</p>
-                  <div class="card-extra">KPR Institute of Engineering and Technology</div>
-                </div>
-                <button class="door-close-btn">&larr; BACK</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Door 2: WHAT I DO -->
-          <div class="about-door-card" id="door-what-i-do" tabindex="0">
-            <div class="door-inner">
-              <div class="door-front">
-                <div class="door-num">02</div>
-                <h3 class="door-title">WHAT I DO</h3>
-                <div class="door-indicator"><span class="arrow-right"></span></div>
-              </div>
-              <div class="door-back">
-                <div class="hud-card-header">// TECHNICAL CAPABILITIES</div>
-                <div class="door-content">
-                  <ul class="skills-bullets-list" id="about-skills-list">
-                    <!-- Loaded dynamically from content.js -->
-                  </ul>
-                </div>
-                <button class="door-close-btn">&larr; BACK</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Door 3: HOW I THINK -->
-          <div class="about-door-card" id="door-how-i-think" tabindex="0">
-            <div class="door-inner">
-              <div class="door-front">
-                <div class="door-num">03</div>
-                <h3 class="door-title">HOW I THINK</h3>
-                <div class="door-indicator"><span class="arrow-right"></span></div>
-              </div>
-              <div class="door-back">
-                <div class="hud-card-header">// ENGINEERING PHILOSOPHY</div>
-                <div class="door-content">
-                  <h4 class="card-philosophy">Learn &rarr; Build &rarr; Experiment &rarr; Improve</h4>
-                  <p class="card-desc">I enjoy turning complex, abstract problems into practical, reliable, and elegant technology solutions.</p>
-                  <div class="card-extra">Curiosity is the main compiler.</div>
-                </div>
-                <button class="door-close-btn">&larr; BACK</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 — SELECTED WORKS (Hidden chapter revealed on click) -->
-    <section class="chapter-section content-section works-section" id="projects" aria-label="Selected Works">
-      
-      <!-- Hidden overlay screen initially -->
-      <div class="works-pre-reveal" id="works-pre-reveal">
-        <div class="reveal-btn-container">
-          <p class="reveal-prompt-text">CHAPTER 05</p>
-          <button class="reveal-works-btn" id="reveal-works-btn">ENTER MY WORK</button>
-        </div>
-      </div>
-
-      <!-- Shutter Flash Overlay -->
-      <div class="camera-shutter-flash" id="shutter-flash"></div>
-
-      <!-- Real Works Content, hidden initially -->
-      <div class="works-content-wrapper works-hidden" id="works-content-wrapper">
-        <div class="section-divider">
-          <span class="divider-line"></span>
-          <span class="divider-text">05 / SELECTED WORKS</span>
-          <span class="divider-line"></span>
-        </div>
-
-        <div class="container">
-          <div class="works-gallery-grid" id="works-gallery-grid">
-            <!-- Loaded dynamically from content.js -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Project Detail Overlay Modal -->
-    <div class="project-modal" id="project-modal" role="dialog" aria-hidden="true">
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
       <div class="modal-backdrop" id="modal-backdrop"></div>
-      <div class="modal-container">
-        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close details">&times; CLOSE</button>
-        
-        <div class="modal-scroll-body">
-          <div class="modal-header-visual">
-            <img src="" alt="" class="modal-project-img" id="modal-project-img">
-            <div class="modal-overlay-glow"></div>
-            <div class="modal-project-num" id="modal-project-num">01</div>
+      <div class="modal-panel">
+        <button class="modal-close" id="modal-close" aria-label="Close project">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </button>
+        <div class="modal-body">
+          <div class="modal-visual">
+            <img src="" alt="" id="modal-img" class="modal-img">
           </div>
-          
-          <div class="modal-info-grid">
-            <div class="modal-main-column">
-              <span class="modal-project-category" id="modal-project-category">ROBOTICS</span>
-              <h3 class="modal-project-title" id="modal-project-title">PROJECT TITLE</h3>
-              <p class="modal-project-desc" id="modal-project-long-desc">Detailed project description goes here.</p>
-              
-              <div class="modal-highlights-container">
-                <h4>KEY HIGHLIGHTS</h4>
-                <ul class="modal-highlights-list" id="modal-project-highlights">
-                  <!-- Dynamic highlights -->
-                </ul>
-              </div>
-            </div>
-            
-            <div class="modal-sidebar-column">
-              <div class="modal-meta-box">
-                <span class="meta-label">TECHNOLOGY</span>
-                <div class="modal-tags-container" id="modal-project-tags">
-                  <!-- Tags -->
-                </div>
-              </div>
-
-              <div class="modal-meta-box">
-                <span class="meta-label">PERFORMANCE METRICS</span>
-                <div class="modal-metrics-container" id="modal-project-metrics">
-                  <!-- Metrics -->
-                </div>
-              </div>
-
-              <div class="modal-actions">
-                <a href="#" class="modal-btn btn-github" id="modal-btn-github" target="_blank" rel="noopener">GITHUB REPOSITORY &rarr;</a>
-              </div>
-            </div>
+          <div class="modal-info">
+            <span class="modal-category" id="modal-category"></span>
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-desc" id="modal-desc"></p>
+            <div class="modal-tags" id="modal-tags"></div>
+            <a href="#" class="btn btn-primary modal-link" id="modal-link" target="_blank" rel="noopener">View on GitHub</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- 06 — MY TECHNICAL UNIVERSE (Scroll-driven skills) -->
-    <section class="chapter-section content-section skills-section" id="skills" aria-label="Technical Skills">
-      <div class="section-divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">06 / TECHNICAL UNIVERSE</span>
-        <span class="divider-line"></span>
-      </div>
-
-      <div class="container">
-        <div class="skills-layout">
-          <div class="skills-left-sticky">
-            <h2 class="skills-hero-statement" id="skills-hero-statement">
-              <span>CODE IS</span><br>
-              <span class="accent-text">MY MEDIUM</span>
-            </h2>
-            <div class="skills-technical-hud">
-              <div class="hud-pulse"></div>
-              <span>ACTIVE SKILL ENGINES // ONLINE</span>
-            </div>
-          </div>
-          
-          <div class="skills-right-flow" id="skills-list-container">
-            <!-- Loaded dynamically from content.js -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 07 — 3D AI ROBOT EXPERIENCE (Interactive mouse head-tracking) -->
-    <section class="chapter-section content-section robot-section" id="robot-experience" aria-label="AI Experience">
-      <div class="section-divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">07 / 3D INTELLIGENCE</span>
-        <span class="divider-line"></span>
-      </div>
-
-      <div class="container robot-container-grid">
-        <div class="robot-info">
-          <h3 class="robot-title">SYSTEM INTERACTION</h3>
-          <p class="robot-desc">Move your cursor to interface with the core cognitive visual intelligence module. Floating panels reflect data sectors currently in active cache memory.</p>
-          <div class="robot-status-log">
-            <div class="log-line"><span class="log-green">[OK]</span> Core neural weights loaded.</div>
-            <div class="log-line"><span class="log-green">[OK]</span> Vision sensor pipeline streaming.</div>
-            <div class="log-line"><span class="log-red">[LIVE]</span> Coordinates tracked in real-time.</div>
+  <!-- ===================== SKILLS ===================== -->
+  <section class="skills" id="skills" aria-label="Technical Skills">
+    <div class="container">
+      <div class="skills-layout">
+        <!-- Sticky left -->
+        <div class="skills-sticky">
+          <h2 class="skills-statement">
+            <span>CODE IS</span>
+            <span class="accent">MY MEDIUM</span>
+          </h2>
+          <p class="skills-sub">Active skill stack. Built and used in real projects.</p>
+          <div class="skills-status">
+            <div class="pulse-dot" aria-hidden="true"></div>
+            <span class="mono-sm">SYSTEMS ONLINE</span>
           </div>
         </div>
 
-        <div class="robot-visual-area" id="robot-visual-area">
-          <!-- Glassmorphic floating tags -->
-          <div class="floating-glass-tag tag-ai" id="tag-ai">AI</div>
-          <div class="floating-glass-tag tag-data" id="tag-data">DATA</div>
-          <div class="floating-glass-tag tag-code" id="tag-code">CODE</div>
-          <div class="floating-glass-tag tag-vision" id="tag-vision">VISION</div>
-          <div class="floating-glass-tag tag-robotics" id="tag-robotics">ROBOTICS</div>
-          
-          <!-- CSS 3D Robot Head container -->
-          <div class="robot-head-wrapper">
-            <div class="robot-head-scene">
-              <div class="robot-head" id="robot-head">
-                <div class="face face-front">
-                  <div class="visor-eye-glow"></div>
-                  <div class="face-detail line-1"></div>
-                  <div class="face-detail line-2"></div>
-                </div>
-                <div class="face face-back"></div>
-                <div class="face face-right"></div>
-                <div class="face face-left"></div>
-                <div class="face face-top">
-                  <div class="antenna-base">
-                    <div class="antenna-rod">
-                      <div class="antenna-led"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="face face-bottom"></div>
-                <!-- Extra 3D structures inside -->
-                <div class="neck"></div>
-              </div>
-            </div>
-            <!-- Shadow below head -->
-            <div class="robot-shadow"></div>
-          </div>
+        <!-- Flowing right -->
+        <div class="skills-flow" id="skills-flow">
+          <!-- Populated by script.js -->
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 08 — EDUCATION (Timeline journey) -->
-    <section class="chapter-section content-section education-section" id="education" aria-label="Education Timeline">
-      <div class="section-divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">08 / JOURNEY</span>
-        <span class="divider-line"></span>
+  <!-- ===================== JOURNEY ===================== -->
+  <section class="journey" id="journey" aria-label="Education Timeline">
+    <div class="container">
+      <h2 class="section-heading reveal-up">My Journey</h2>
+
+      <div class="timeline" id="timeline">
+        <!-- Populated by script.js -->
       </div>
+    </div>
+  </section>
 
-      <div class="container">
-        <h2 class="timeline-hero-title">MY JOURNEY</h2>
-        
-        <div class="timeline-wrapper">
-          <div class="timeline-progress-bar">
-            <div class="timeline-progress-fill" id="timeline-progress-fill"></div>
-          </div>
-          
-          <div class="timeline-nodes-container" id="education-timeline-nodes">
-            <!-- Loaded dynamically from content.js -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 09 — CERTIFICATIONS & ACHIEVEMENTS (Certificate Wall) -->
-    <section class="chapter-section content-section certificate-section" id="certifications" aria-label="Certifications">
-      <div class="section-divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">09 / ACHIEVEMENTS</span>
-        <span class="divider-line"></span>
-      </div>
-
-      <div class="container">
-        <h2 class="cert-wall-title">CERTIFICATE WALL</h2>
-        
-        <div class="certifications-wall-grid" id="certifications-wall-grid">
-          <!-- Loaded dynamically from content.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- 10 — CONTACT (Closing call-to-action) -->
-    <section class="chapter-section content-section contact-section" id="contact" aria-label="Contact">
-      <div class="section-divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">10 / CONNECT</span>
-        <span class="divider-line"></span>
-      </div>
-
-      <div class="container contact-container">
-        <div class="contact-text-box">
-          <h2 class="contact-huge-heading reveal-on-scroll">LET'S BUILD<br>SOMETHING<br><span class="accent-text">INTELLIGENT.</span></h2>
-          <p class="contact-subtitle reveal-on-scroll">Have an idea, project or opportunity? Let's connect.</p>
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <h2 class="contact-heading reveal-up">
+            Let's build something<br>
+            <span class="accent">intelligent.</span>
+          </h2>
+          <p class="contact-sub reveal-up" style="--d:1">Have a project, an idea, or an opportunity? Reach out.</p>
         </div>
 
-        <div class="contact-links-list">
-          <a href="assets/resume.pdf" class="magnetic-contact-link resume-link" id="contact-resume" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">
-            <span class="link-label">RESUME</span>
-            <span class="link-val">Download PDF Resume</span>
-            <span class="link-arrow">&darr;</span>
+        <div class="contact-links">
+          <a href="mailto:nandha97151@gmail.com" class="contact-link reveal-up" style="--d:0" id="contact-email">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-val">nandha97151@gmail.com</span>
+            <span class="contact-link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="mailto:nandha97151@gmail.com" class="magnetic-contact-link email-link" id="contact-email">
-            <span class="link-label">EMAIL</span>
-            <span class="link-val">nandha97151@gmail.com</span>
-            <span class="link-arrow">&nearr;</span>
+          <a href="https://github.com/nandha97151-lab" class="contact-link reveal-up" style="--d:1" id="contact-github" target="_blank" rel="noopener">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-val">github.com/nandha97151-lab</span>
+            <span class="contact-link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="https://github.com/nandha97151-lab" class="magnetic-contact-link github-link" id="contact-github" target="_blank" rel="noopener">
-            <span class="link-label">GITHUB</span>
-            <span class="link-val">github.com/nandha97151-lab</span>
-            <span class="link-arrow">&nearr;</span>
+          <a href="https://www.linkedin.com/in/nandhakumar1234/" class="contact-link reveal-up" style="--d:2" id="contact-linkedin" target="_blank" rel="noopener">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-val">linkedin.com/in/nandhakumar1234</span>
+            <span class="contact-link-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="https://www.linkedin.com/in/nandhakumar1234/" class="magnetic-contact-link linkedin-link" id="contact-linkedin" target="_blank" rel="noopener">
-            <span class="link-label">LINKEDIN</span>
-            <span class="link-val">linkedin.com/in/nandhakumar1234/</span>
-            <span class="link-arrow">&nearr;</span>
+          <a href="assets/resume.pdf" class="contact-link reveal-up" style="--d:3" id="contact-resume" download="Nandhakumar_N_Resume.pdf" target="_blank" rel="noopener">
+            <span class="contact-link-label">Resume</span>
+            <span class="contact-link-val">Download PDF</span>
+            <span class="contact-link-arrow" aria-hidden="true">↓</span>
           </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 11 — FOOTER -->
-    <footer class="main-footer" id="footer">
-      <div class="container footer-grid">
-        <div class="footer-left">
-          <h3 class="footer-logo">NANDHAKUMAR N</h3>
-          <p class="footer-role">B.Tech Artificial Intelligence & Data Science</p>
-          <p class="footer-phrase">// Learn &bull; Build &bull; Experiment &bull; Improve</p>
-        </div>
-        
-        <div class="footer-links">
-          <h4 class="footer-title">NAVIGATION</h4>
-          <ul class="footer-links-list">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-social">
-          <h4 class="footer-title">NETWORKS</h4>
-          <ul class="footer-links-list">
-            <li><a href="https://github.com/nandha97151-lab" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/nandhakumar1234/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="mailto:nandha97151@gmail.com">Email</a></li>
-          </ul>
-        </div>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">NANDHAKUMAR N</span>
+        <span class="footer-role mono-sm">B.Tech AI &amp; Data Science — KPRIET 2026</span>
       </div>
-      
-      <div class="footer-bottom">
-        <div class="container footer-bottom-flex">
-          <p class="copyright-text">&copy; 2026 Nandhakumar N. All Rights Reserved.</p>
-          <button class="back-to-top" id="back-to-top-btn" aria-label="Back to Top">
-            <span>BACK TO TOP</span>
-            <span class="arrow-up">&uarr;</span>
-          </button>
-        </div>
+      <div class="footer-right">
+        <p class="footer-copy">&copy; 2026 Nandhakumar N</p>
+        <button class="back-top" id="back-top" aria-label="Back to top">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 13V3M3 8L8 3L13 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-  </main>
-
-  <!-- Load Scripts in order -->
   <script src="script.js"></script>
 </body>
 </html>

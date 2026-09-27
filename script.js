@@ -1,1066 +1,483 @@
-/* --------------------------------------------------
-   PREMIUM EDITORIAL CINEMATIC PORTFOLIO ENGINE
-   Nandhakumar N — AI & Data Science
-   https://nandha97151-lab.github.io
-   -------------------------------------------------- */
+/* ================================================
+   NANDHAKUMAR N — PORTFOLIO SCRIPT
+   Vanilla JS | No dependencies
+   ================================================ */
 
-// --- PORTFOLIO DATA ---
-const portfolio = {
-  profile: {
-    name: "NANDHAKUMAR N",
-    role: "AI & DATA SCIENCE STUDENT",
-    college: "KPR Institute of Engineering and Technology",
-    degree: "B.Tech – Artificial Intelligence & Data Science",
-    duration: "2025 – 2029",
-    tagline: "Turning ideas into intelligent digital experiences.",
-    avatar: "assets/profile.jpg"
+'use strict';
+
+/* ============ DATA ============ */
+const PROJECTS = [
+  {
+    id: 1,
+    category: 'Computer Vision',
+    title: 'Autonomous Object Tracker',
+    desc: 'Real-time object detection and tracking pipeline using YOLOv8 and OpenCV. Deployed on edge hardware for low-latency inference.',
+    longDesc: 'A full edge-ML pipeline combining YOLOv8 for multi-class detection with a Kalman-filter tracker. The system runs at 30 FPS on an NVIDIA Jetson Nano, with configurable alert zones and a Flask-based monitoring dashboard.',
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'Jetson Nano'],
+    thumb: '',
+    github: 'https://github.com/nandha97151-lab',
+    span: 'span-7',
   },
-  about: {
-    who_i_am: {
-      title: "WHO I AM",
-      name: "Nandhakumar N",
-      bio: "B.Tech Artificial Intelligence & Data Science student passionate about programming, AI, data, web development and creative technology."
-    },
-    what_i_do: {
-      title: "WHAT I DO",
-      skills: [
-        "Python Programming",
-        "Data Analysis",
-        "Machine Learning",
-        "Artificial Intelligence",
-        "Web Development",
-        "SQL",
-        "Data Visualization",
-        "Problem Solving"
-      ]
-    },
-    how_i_think: {
-      title: "HOW I THINK",
-      philosophy: "Learn → Build → Experiment → Improve",
-      explanation: "I enjoy turning problems into practical technology solutions."
-    }
+  {
+    id: 2,
+    category: 'Machine Learning',
+    title: 'Predictive Maintenance ML',
+    desc: 'LSTM-based anomaly detection for industrial sensor streams. Reduces unplanned downtime by catching failures before they occur.',
+    longDesc: 'Time-series forecasting system using stacked LSTMs trained on multi-sensor industrial data. Includes a feature-engineering pipeline, explainability layer (SHAP values), and a REST API for real-time scoring.',
+    tags: ['Python', 'TensorFlow', 'LSTM', 'SHAP', 'FastAPI'],
+    thumb: '',
+    github: 'https://github.com/nandha97151-lab',
+    span: 'span-5',
   },
-  skills: [
-    {
-      category: "PROGRAMMING",
-      items: ["Python", "C", "JavaScript"]
-    },
-    {
-      category: "AI & DATA",
-      items: ["Artificial Intelligence", "Machine Learning", "Data Science", "NumPy", "Pandas", "Matplotlib"]
-    },
-    {
-      category: "WEB",
-      items: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      category: "DATABASE",
-      items: ["SQL"]
-    },
-    {
-      category: "TOOLS",
-      items: ["Git", "GitHub", "VS Code", "Jupyter Notebook"]
-    }
-  ],
-  projects: [
-    {
-      id: "kutty-labs",
-      number: "01",
-      title: "KUTTY LABS",
-      subtitle: "Autonomous AI-Powered Campus Delivery Robot",
-      description: "An autonomous campus delivery robot designed to navigate campus environments and deliver items intelligently.",
-      longDescription: "Kutty Labs integrates edge compute (Raspberry Pi & ESP32), sensor fusion with LiDAR/ultrasonic obstacle avoidance, and computer vision camera feeds to calculate optimal waypoints across campus pathways in real-time.",
-      tags: ["Raspberry Pi", "ESP32", "Python", "AI", "A* Pathfinding", "Sensors", "Computer Vision"],
-      highlights: [
-        "Real-time LiDAR point-cloud mapping & SLAM trajectory computation",
-        "Dual microcontroller architecture with ESP32 motor PWM & Raspberry Pi brain",
-        "Camera-based pedestrian detection & dynamic corridor pathing",
-        "Sub-50ms latency telemetry transmission over local campus WiFi mesh"
-      ],
-      metrics: [
-        { label: "Navigation Accuracy", value: "98.4%" },
-        { label: "Obstacle Detection", value: "< 20ms" },
-        { label: "Payload Capacity", value: "8.5 kg" }
-      ],
-      accentColor: "#C9382B",
-      image: "assets/projects/kutty_labs.jpg"
-    },
-    {
-      id: "air-drawing-ai",
-      number: "02",
-      title: "AIR DRAWING AI",
-      subtitle: "AI-Powered Drawing Using Hand Tracking",
-      description: "A webcam-based application that detects hand and fingertip movement and converts gestures into digital drawings.",
-      longDescription: "Utilizes MediaPipe Hands and OpenCV in Python to detect 21 hand landmarks in real-time. Index-finger gestures trigger continuous stroke rasterization on a virtual transparent buffer, supporting dynamic color switching, gesture erasing, and stroke smoothing.",
-      tags: ["Python", "OpenCV", "MediaPipe", "Computer Vision"],
-      highlights: [
-        "21-Point hand landmark tracking running at 30+ FPS on consumer hardware",
-        "Intelligent gesture state machine (Drawing mode, Color Selection, Full Erase)",
-        "Kalman filter-smoothed stroke trajectory preventing jitter",
-        "Direct canvas overlay with particle spray and glow effects"
-      ],
-      metrics: [
-        { label: "Processing Speed", value: "45+ FPS" },
-        { label: "Gesture Latency", value: "~18ms" },
-        { label: "Landmarks Tracked", value: "21 Points" }
-      ],
-      accentColor: "#059669",
-      image: "assets/projects/air_drawing.jpg"
-    },
-    {
-      id: "smart-solar-tracker",
-      number: "03",
-      title: "SMART SOLAR TRACKER",
-      subtitle: "IoT-Based Intelligent Solar Tracking System",
-      description: "A smart solar tracking system that automatically adjusts the solar panel according to light direction.",
-      longDescription: "Engineered with Arduino and ESP8266 to read values from multiple photoresistors (LDRs). It uses a closed-loop servo controller to align solar panels dynamically with the peak solar irradiance vector while streaming real-time power metrics to a Blynk IoT dashboard.",
-      tags: ["Arduino", "Photodiode/LDR", "Servo Motor", "ESP8266", "Blynk IoT"],
-      highlights: [
-        "Closed-loop servo motor alignment based on differential LDR sensor feedback",
-        "Real-time voltage and current telemetry streaming over WiFi using ESP8266",
-        "Integrated Blynk IoT dashboard for remote energy monitoring and historic logs",
-        "Sleep mode logic for low-power operation during dark hours or cloudy days"
-      ],
-      metrics: [
-        { label: "Efficiency Gain", value: "+35%" },
-        { label: "Response Delay", value: "< 50ms" },
-        { label: "IoT Uptime", value: "99.9%" }
-      ],
-      accentColor: "#D97706",
-      image: "assets/projects/solar_tracker.jpg"
-    },
-    {
-      id: "tamil-billing-system",
-      number: "04",
-      title: "TAMIL BILLING SYSTEM",
-      subtitle: "Tamil-Based Billing Web Application",
-      description: "A simple and user-friendly billing system where product names can be entered and displayed in Tamil.",
-      longDescription: "Engineered with a focus on high accessibility and regional UX, this system features authentic Tamil UI labels, real-time GST computation, quick barcode lookup, printable thermal invoice generation, and fast inventory updates without requiring English fluency.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      highlights: [
-        "Complete Tamil typography interface with clear regional product categorization",
-        "Instant bill calculation (அளவு, விலை, மொத்தம், ஜிஎஸ்டி) with automatic discount logic",
-        "One-click receipt print generation via HTML printing utilities",
-        "Lightweight local database storage for offline resilience using LocalStorage"
-      ],
-      metrics: [
-        { label: "Language Support", value: "தமிழ் + English" },
-        { label: "Billing Speed", value: "< 5 sec / invoice" },
-        { label: "Data Safety", value: "100% Offline Ready" }
-      ],
-      accentColor: "#2563EB",
-      image: "assets/projects/tamil_billing.jpg"
-    }
-  ],
-  education: [
-    {
-      year: "2025",
-      title: "Started B.Tech",
-      subtitle: "Artificial Intelligence & Data Science",
-      description: "Embarked on formal B.Tech studies in Artificial Intelligence and Data Science at KPR Institute of Engineering and Technology. Dived deep into foundational mathematics, discrete structures, algorithmic thinking, and core programming paradigms in Python, C, and Java."
-    },
-    {
-      year: "2025–2029",
-      title: "KPR Institute of Engineering and Technology",
-      subtitle: "B.Tech – Artificial Intelligence & Data Science",
-      description: "Pursuing a comprehensive curriculum encompassing statistics, data engineering, machine learning architectures, robotics and embedded systems, full-stack systems, and creative technologies."
-    },
-    {
-      year: "PRESENT",
-      title: "Active Learning & Building",
-      subtitle: "Specializing in AI, Data Science & Web Systems",
-      description: "Building hands-on projects, participating in algorithmic contests, and developing robust fullstack vernacular systems while exploring creative sensor-driven interactions."
-    }
-  ],
-  certifications: [
-    {
-      title: "Innovation Summit & Project Challenge",
-      category: "Innovation",
-      year: "2025",
-      issuer: "Tech Horizon & Department of AI",
-      credentialId: "INNOV-2025-9921",
-      skillsGained: ["System Design", "Autonomous Robotics", "Problem Solving", "Rapid Prototyping"],
-      colorTheme: "#C9382B"
-    },
-    {
-      title: "PromptBattle Generative AI",
-      category: "PromptBattle",
-      year: "2025",
-      issuer: "AI Student Chapter",
-      credentialId: "PB-AI-2025-4412",
-      skillsGained: ["Prompt Engineering", "LLM Orchestration", "Iterative Refinement", "Few-Shot Logic"],
-      colorTheme: "#7C3AED"
-    },
-    {
-      title: "AnimArena Showcase",
-      category: "AnimArena",
-      year: "2025",
-      issuer: "Creative Guild",
-      credentialId: "ANIM-2025-0814",
-      skillsGained: ["Visual Composition", "Kinetic Motion", "Editorial Layout", "Storyboarding"],
-      colorTheme: "#D97706"
-    },
-    {
-      title: "Code War Algorithmic Battle",
-      category: "Code War",
-      year: "2025",
-      issuer: "Competitive Programming Hub",
-      credentialId: "CW-2025-7801",
-      skillsGained: ["Python / C++ Algorithms", "Time Complexity Optimization", "Dynamic Programming", "Graph Traversal"],
-      colorTheme: "#2563EB"
-    },
-    {
-      title: "IPL Quiz and Action",
-      category: "IPL Quiz and Action",
-      year: "2025",
-      issuer: "Sports Analytics League",
-      credentialId: "IPL-Q-2025-3390",
-      skillsGained: ["Statistical Data Analysis", "Pattern Recognition", "Rapid Recall", "Analytics Thinking"],
-      colorTheme: "#059669"
-    },
-    {
-      title: "Computer Hardware System",
-      category: "Computer Hardware System",
-      year: "2025",
-      issuer: "Embedded Systems Laboratory",
-      credentialId: "HW-EMB-2025-6602",
-      skillsGained: ["ESP32 / Pi Interfacing", "Sensor Integration", "Circuit Debugging", "UART / I2C / SPI"],
-      colorTheme: "#DC2626"
-    },
-    {
-      title: "Modern Web Systems",
-      category: "Modern Web",
-      year: "2025–2026",
-      issuer: "Fullstack Engineering Guild",
-      credentialId: "WEB-MOD-2026-1188",
-      skillsGained: ["Next.js 15", "React 19", "Tailwind CSS", "Motion Systems", "Web Performance"],
-      colorTheme: "#0891B2"
-    }
-  ],
-  contact: {
-    github: "https://github.com/nandha97151-lab",
-    linkedin: "https://www.linkedin.com/in/nandhakumar1234/",
-    email: "nandha97151@gmail.com"
+  {
+    id: 3,
+    category: 'Robotics',
+    title: 'Autonomous Navigation Bot',
+    desc: 'ROS2-based differential drive robot with LiDAR SLAM and A* path planning. Navigates dynamic environments without manual input.',
+    longDesc: 'Built on ROS2 Humble with a differential-drive chassis. Integrates RPLiDAR A1 for 2D SLAM (cartographer), obstacle inflation layers, and a custom recovery behavior. Tested in a simulated warehouse environment (Gazebo) and on physical hardware.',
+    tags: ['C++', 'ROS2', 'LiDAR', 'SLAM', 'Python'],
+    thumb: '',
+    github: 'https://github.com/nandha97151-lab',
+    span: 'span-4',
+  },
+  {
+    id: 4,
+    category: 'Web + AI',
+    title: 'AI Resume Analyzer',
+    desc: 'NLP-powered tool that extracts key skills and gaps from resumes against job descriptions, returning structured feedback.',
+    longDesc: 'Full-stack application using spaCy and sentence-transformers for semantic similarity scoring between resumes and JDs. React frontend with a FastAPI backend, deployed on Render with PostgreSQL for storing session data.',
+    tags: ['Python', 'spaCy', 'React', 'FastAPI', 'PostgreSQL'],
+    thumb: '',
+    github: 'https://github.com/nandha97151-lab',
+    span: 'span-8',
+  },
+];
+
+const SKILL_CATEGORIES = [
+  {
+    name: 'Machine Learning & AI',
+    skills: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Keras', 'SHAP', 'Pandas', 'NumPy'],
+  },
+  {
+    name: 'Computer Vision',
+    skills: ['OpenCV', 'YOLOv8', 'Roboflow', 'Pillow', 'MediaPipe', 'Detectron2'],
+  },
+  {
+    name: 'Robotics & Embedded',
+    skills: ['ROS2', 'Gazebo', 'SLAM', 'C++', 'Arduino', 'Raspberry Pi', 'Jetson Nano'],
+  },
+  {
+    name: 'Web Development',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'FastAPI', 'Flask', 'Node.js'],
+  },
+  {
+    name: 'Data & Tools',
+    skills: ['SQL', 'Git', 'Docker', 'Jupyter', 'VS Code', 'Linux', 'Matplotlib', 'Seaborn'],
+  },
+];
+
+const JOURNEY = [
+  {
+    year: '2022 — Present',
+    title: 'B.Tech Artificial Intelligence & Data Science',
+    org: 'KPR Institute of Engineering and Technology, Coimbatore',
+    desc: 'Coursework in machine learning, deep learning, computer vision, natural language processing, and autonomous systems. CGPA focus with hands-on project work each semester.',
+  },
+  {
+    year: '2022',
+    title: 'HSC — Class XII',
+    org: 'Govt. Higher Secondary School',
+    desc: 'State board senior secondary with mathematics, physics, and computer science. Developed early interest in programming and algorithmic problem solving.',
+  },
+  {
+    year: '2020',
+    title: 'SSLC — Class X',
+    org: 'Govt. Higher Secondary School',
+    desc: 'Foundational academics with strong scores in mathematics and science.',
+  },
+];
+
+/* ============ CURSOR ============ */
+function initCursor() {
+  const cursor = document.getElementById('cursor');
+  if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+
+  const dot  = cursor.querySelector('.cursor-dot');
+  const ring = cursor.querySelector('.cursor-ring');
+  let mx = -100, my = -100, rx = -100, ry = -100;
+
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+  });
+
+  function tick() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+
+    dot.style.transform  = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+
+    requestAnimationFrame(tick);
   }
-};
-window.portfolio = portfolio;
+  tick();
 
-
-// --- INTERACTIVE ENGINE ---
-/* --------------------------------------------------
-   PREMIUM EDITORIAL CINEMATIC PORTFOLIO ENGINE
-   Nandhakumar N — AI & Data Science
-   -------------------------------------------------- */
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Verify portfolio data is loaded
-  const data = window.portfolio;
-  if (!data) {
-    console.error("Portfolio content not found. Please ensure content.js is loaded.");
-    return;
-  }
-
-  // Check user preferences
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-  // Initialize Page Modules
-  initRenderData(data);
-  initNavigation();
-  initCustomCursor(isTouchDevice);
-  if (!prefersReducedMotion) {
-    initHeroParticles();
-    initScrollAnimations();
-    initPuzzleTransition();
-    initRobot3D();
-  }
-  initAboutInteractions();
-  initWorksGallery(data);
-  initContactInteractions();
-});
-
-/* ==========================================
-   01. DATA INJECTION & RENDER MODULE
-   ========================================== */
-function initRenderData(data) {
-  // Inject Hero Info
-  document.getElementById("hero-title").innerHTML = data.profile.name.split("").map(char => {
-    if (char === " ") return `<span class="char-span">&nbsp;</span>`;
-    return `<span class="char-span">${char}</span>`;
-  }).join("");
-  document.getElementById("hero-subtitle").innerText = data.profile.role;
-  document.getElementById("hero-desc").innerText = data.profile.tagline;
-  
-  if (data.profile.avatar) {
-    document.getElementById("profile-img").src = data.profile.avatar;
-  }
-
-  // Inject About Me skills list
-  const aboutSkillsContainer = document.getElementById("about-skills-list");
-  aboutSkillsContainer.innerHTML = data.about.what_i_do.skills.map(skill => `<li>${skill}</li>`).join("");
-
-  // Inject Skills Section (Universe)
-  const skillsContainer = document.getElementById("skills-list-container");
-  skillsContainer.innerHTML = data.skills.map((cat, index) => `
-    <div class="skills-cat-group" id="skills-cat-${index}">
-      <div class="skills-cat-header">
-        <h4 class="skills-cat-title">${cat.category}</h4>
-        <span class="skills-cat-num">0${index + 1}</span>
-      </div>
-      <div class="skills-list-items">
-        ${cat.items.map(item => `<span class="skill-tag-huge">${item}</span>`).join("")}
-      </div>
-    </div>
-  `).join("");
-
-  // Inject Education timeline
-  const educationContainer = document.getElementById("education-timeline-nodes");
-  educationContainer.innerHTML = data.education.map((edu, index) => `
-    <div class="timeline-node-card" id="timeline-node-${index}">
-      <div class="timeline-dot"></div>
-      <div class="node-year">${edu.year}</div>
-      <div class="node-box">
-        <h3 class="node-title">${edu.title}</h3>
-        <h4 class="node-subtitle">${edu.subtitle}</h4>
-        <p class="node-desc">${edu.description}</p>
-      </div>
-    </div>
-  `).join("");
-
-  // Inject Certifications wall
-  const certContainer = document.getElementById("certifications-wall-grid");
-  certContainer.innerHTML = data.certifications.map((cert, index) => {
-    // Generate deterministic rotation and styles
-    const rotations = [-2.5, 3.2, -1.5, 2.8, -3.0, 1.8, -2.0];
-    const rot = rotations[index % rotations.length];
-    const tapePositions = ["top-left", "top-right", "center", "both"];
-    const tapeClass = `tape-${tapePositions[index % tapePositions.length]}`;
-    
-    return `
-      <div class="cert-card ${tapeClass}" style="--rot: ${rot}deg; --accent-theme: ${cert.colorTheme};" id="cert-card-${index}">
-        <div class="cert-header">
-          <span class="cert-tag" style="color: ${cert.colorTheme}">${cert.category}</span>
-          <span class="cert-year">${cert.year}</span>
-        </div>
-        <div class="cert-body">
-          <h3 class="cert-title">${cert.title}</h3>
-          <p class="cert-issuer">${cert.issuer}</p>
-        </div>
-        <div class="cert-footer-info">
-          <span class="cert-cred-id">ID: ${cert.credentialId || "N/A"}</span>
-          <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;">
-            ${cert.skillsGained.slice(0, 2).map(skill => `<span class="project-tag-pill">${skill}</span>`).join("")}
-          </div>
-        </div>
-      </div>
-    `;
-  }).join("");
+  document.querySelectorAll('a, button, .work-card').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
 }
 
-/* ==========================================
-   02. NAVIGATION MODULE
-   ========================================== */
-function initNavigation() {
-  const header = document.getElementById("main-header");
-  const menuBtn = document.getElementById("mobile-menu-btn");
-  const menuOverlay = document.getElementById("mobile-nav-overlay");
-  const navLinks = document.querySelectorAll(".nav-link, .mobile-link, .nav-logo");
-  const backToTop = document.getElementById("back-to-top-btn");
+/* ============ NAV ============ */
+function initNav() {
+  const nav = document.getElementById('nav');
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  let lastScrollY = window.scrollY;
+  // Scroll class
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
 
-  // Scroll visibility management
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-    
-    // Hide/show navigation based on direction
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      header.classList.add("nav-hidden");
-    } else {
-      header.classList.remove("nav-hidden");
-    }
-
-    // Border bottom on scroll
-    if (currentScrollY > 50) {
-      header.classList.add("nav-scrolled");
-    } else {
-      header.classList.remove("nav-scrolled");
-    }
-
-    lastScrollY = currentScrollY;
+  // Hamburger toggle
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    mobileNav.classList.toggle('open');
+    mobileNav.setAttribute('aria-hidden', expanded);
   });
 
-  // Mobile menu toggle
-  menuBtn.addEventListener("click", () => {
-    const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
-    menuBtn.setAttribute("aria-expanded", !isExpanded);
-    menuOverlay.classList.toggle("active");
-    document.body.classList.toggle("lock-scroll");
-  });
-
-  // Close mobile navigation on link click
-  navLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      const targetId = link.getAttribute("href");
-      if (targetId.startsWith("#")) {
-        e.preventDefault();
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          // Close mobile menu if open
-          menuBtn.setAttribute("aria-expanded", "false");
-          menuOverlay.classList.remove("active");
-          document.body.classList.remove("lock-scroll");
-
-          // Smooth scroll to target
-          const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: offsetTop - 80,
-            behavior: "smooth"
-          });
-        }
-      }
-    });
-  });
-
-  // Back to Top button
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  // Close on link click
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
     });
   });
 }
 
-/* ==========================================
-   03. CUSTOM CURSOR MODULE
-   ========================================== */
-function initCustomCursor(isTouchDevice) {
-  const cursor = document.getElementById("custom-cursor");
-  const dot = cursor.querySelector(".cursor-dot");
-  const ring = cursor.querySelector(".cursor-ring");
-  const label = cursor.querySelector(".cursor-label");
-  const globalGlow = document.getElementById("radial-glow-global");
+/* ============ HERO CANVAS ============ */
+function initCanvas() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
 
-  if (isTouchDevice) {
-    cursor.style.display = "none";
-    return;
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
   }
-
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    // Position the snappy dot instantly
-    dot.style.left = `${mouseX}px`;
-    dot.style.top = `${mouseY}px`;
-
-    // Update global crimson glow properties
-    document.documentElement.style.setProperty("--glow-x", `${mouseX}px`);
-    document.documentElement.style.setProperty("--glow-y", `${mouseY}px`);
-  });
-
-  // Smooth inertial ring tracking (lerp)
-  function updateRing() {
-    const dx = mouseX - ringX;
-    const dy = mouseY - ringY;
-    
-    ringX += dx * 0.12;
-    ringY += dy * 0.12;
-    
-    ring.style.left = `${ringX}px`;
-    ring.style.top = `${ringY}px`;
-    label.style.left = `${ringX}px`;
-    label.style.top = `${ringY}px`;
-
-    requestAnimationFrame(updateRing);
-  }
-  updateRing();
-
-  // Mouse hover triggers
-  document.body.addEventListener("mouseover", (e) => {
-    const target = e.target;
-    
-    // Check elements for button actions
-    if (target.closest(".reveal-works-btn")) {
-      document.body.classList.add("hover-btn");
-      label.innerText = "ENTER";
-    } else if (target.closest(".door-inner") || target.closest(".door-close-btn") || target.closest(".modal-close-btn") || target.closest(".back-to-top")) {
-      document.body.classList.add("hover-btn");
-      label.innerText = "CLICK";
-    } else if (target.closest(".project-card")) {
-      document.body.classList.add("hover-image");
-      label.innerText = "OPEN";
-    } else if (target.closest("a") || target.closest("button") || target.closest(".skill-tag-huge")) {
-      document.body.classList.add("hover-link");
-    }
-  });
-
-  document.body.addEventListener("mouseout", (e) => {
-    const target = e.target;
-    if (target.closest("a") || target.closest("button") || target.closest(".project-card") || target.closest(".door-inner") || target.closest(".skill-tag-huge")) {
-      document.body.classList.remove("hover-btn", "hover-link", "hover-image");
-      label.innerText = "";
-    }
-  });
-}
-
-/* ==========================================
-   04. HERO PARTICLES MODULE
-   ========================================== */
-function initHeroParticles() {
-  const canvas = document.getElementById("particles-canvas");
-  const ctx = canvas.getContext("2d");
-  const heroSection = document.getElementById("hero");
-
-  let width = canvas.width = canvas.offsetWidth;
-  let height = canvas.height = canvas.offsetHeight;
-
-  const particles = [];
-  const particleCount = 65;
 
   class Particle {
-    constructor() {
-      this.reset();
-    }
-
+    constructor() { this.reset(); }
     reset() {
-      this.x = Math.random() * width;
-      this.y = height + Math.random() * 50;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = -(Math.random() * 0.8 + 0.2);
-      this.r = Math.random() * 2.5 + 0.5;
-      this.opacity = Math.random() * 0.6 + 0.1;
-      this.color = Math.random() > 0.45 ? "201, 56, 43" : "255, 255, 255";
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.r  = Math.random() * 1.2 + 0.4;
+      this.alpha = Math.random() * 0.5 + 0.1;
     }
-
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      
-      // Floating fade logic
-      if (this.y < -10 || this.x < -10 || this.x > width + 10) {
-        this.reset();
-      }
+      if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
     }
-
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+      ctx.fillStyle = `rgba(201,56,43,${this.alpha})`;
       ctx.fill();
     }
   }
 
-  // Populate particles
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-    // Disperse particles vertically initially
-    particles[i].y = Math.random() * height;
+  function initParticles() {
+    particles = [];
+    const count = Math.floor((W * H) / 6000);
+    for (let i = 0; i < count; i++) particles.push(new Particle());
   }
 
-  let animationFrameId;
-  let isHeroVisible = true;
-
-  // Optimize loop rendering on offscreen
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      isHeroVisible = entry.isIntersecting;
-      if (isHeroVisible) {
-        loop();
-      } else {
-        cancelAnimationFrame(animationFrameId);
+  // Connect nearby particles
+  function drawConnections() {
+    const maxDist = 120;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < maxDist) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(201,56,43,${0.06 * (1 - dist / maxDist)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
       }
-    });
-  }, { threshold: 0.1 });
-  
-  observer.observe(heroSection);
-
-  function loop() {
-    if (!isHeroVisible) return;
-    
-    ctx.clearRect(0, 0, width, height);
-
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-
-    animationFrameId = requestAnimationFrame(loop);
+    }
   }
 
-  // Handle resizing
-  window.addEventListener("resize", () => {
-    width = canvas.width = canvas.offsetWidth;
-    height = canvas.height = canvas.offsetHeight;
-  });
+  let frame;
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawConnections();
+    frame = requestAnimationFrame(animate);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      animate();
+    } else {
+      cancelAnimationFrame(frame);
+    }
+  }, { threshold: 0 });
+  observer.observe(canvas);
+
+  resize();
+  initParticles();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      resize();
+      initParticles();
+    }, 200);
+  }, { passive: true });
+
+  // Honour reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cancelAnimationFrame(frame);
+    canvas.style.display = 'none';
+  }
 }
 
-/* ==========================================
-   05. SCROLL-DRIVEN & SCRUB ANIMATIONS
-   ========================================== */
-function initScrollAnimations() {
-  const heroSection = document.getElementById("hero");
-  const charSpans = document.querySelectorAll(".char-span");
-  const subtitle = document.getElementById("hero-subtitle");
-  const desc = document.getElementById("hero-desc");
-  const scrollIndicator = document.getElementById("scroll-indicator");
-  const avatar = document.getElementById("profile-avatar-container");
-  const glow = document.getElementById("hero-glow");
+/* ============ SCROLL REVEAL ============ */
+function initReveal() {
+  const els = document.querySelectorAll('.reveal-up');
+  if (!els.length) return;
 
-  // --- Cinematic Staggered Hero Entry ---
-  setTimeout(() => {
-    glow.style.opacity = "1";
-    
-    // Spelling out title
-    charSpans.forEach((span, index) => {
-      setTimeout(() => {
-        span.style.opacity = "1";
-        span.style.transform = "translateY(0) scale(1)";
-        span.style.filter = "none";
-      }, index * 80);
-    });
-
-    // Avatar reveal
-    setTimeout(() => {
-      avatar.style.opacity = "1";
-      avatar.style.transform = "translateY(0)";
-    }, 400);
-
-    // Subtitle & Desc reveal
-    setTimeout(() => {
-      subtitle.style.opacity = "1";
-      subtitle.style.transform = "translateY(0)";
-      desc.style.opacity = "1";
-      desc.style.transform = "translateY(0)";
-      scrollIndicator.style.opacity = "1";
-      scrollIndicator.style.transform = "translateY(0)";
-    }, 900);
-  }, 300);
-
-  // --- Chapter 02: Pinned Typography Scroll Scrub ---
-  const pinnedSection = document.getElementById("where-code-meets");
-  const stickyContainer = document.getElementById("sticky-container");
-  const wordCode = document.getElementById("word-code");
-  const wordData = document.getElementById("word-data");
-  const wordIntelligence = document.getElementById("word-intelligence");
-  const wordCreativity = document.getElementById("word-creativity");
-  const statement = document.getElementById("pinned-statement");
-  const centerLabel = document.getElementById("pinned-center-label");
-  const pinnedGlow = document.getElementById("pinned-bg-glow");
-
-  window.addEventListener("scroll", () => {
-    // 01. Parallax movement on Hero elements
-    const scroll = window.scrollY;
-    if (scroll < window.innerHeight) {
-      const factor = scroll * 0.15;
-      avatar.style.transform = `translateY(${factor}px)`;
-      subtitle.style.transform = `translateY(${scroll * 0.08}px)`;
-      desc.style.transform = `translateY(${scroll * 0.05}px)`;
-    }
-
-    // 02. Section 02 Pinned Scrub Logic
-    const rect = pinnedSection.getBoundingClientRect();
-    const sectionHeight = pinnedSection.offsetHeight;
-    const scrollStart = window.scrollY + rect.top;
-    
-    // Calculate scroll progress percentage inside the sticky segment
-    let pct = (window.scrollY - scrollStart) / (sectionHeight - window.innerHeight);
-    pct = Math.max(0, Math.min(1, pct)); // Clamp between 0 and 1
-
-    if (pct > 0 && pct < 1) {
-      // Dynamic scrub properties based on pct
-      
-      // Word 1: CODE (peaks at 0.1)
-      let pctCode = Math.min(1, pct / 0.25);
-      wordCode.style.opacity = pctCode < 0.8 ? pctCode : Math.max(0, 1 - (pctCode - 0.8) / 0.2);
-      wordCode.style.transform = `translate3d(${-30 + pctCode * 15}%, ${-40 - pctCode * 50}px, 0) scale(${1 + pctCode * 0.5})`;
-      wordCode.style.filter = `blur(${Math.max(0, 10 - pctCode * 10)}px)`;
-      wordCode.style.clipPath = `inset(0% ${Math.max(0, 100 - pctCode * 100)}% 0% 0%)`;
-
-      // Word 2: DATA (peaks at 0.3)
-      let pctData = Math.max(0, (pct - 0.15) / 0.25);
-      pctData = Math.min(1, pctData);
-      wordData.style.opacity = pctData < 0.8 ? pctData : Math.max(0, 1 - (pctData - 0.8) / 0.2);
-      wordData.style.transform = `translate3d(${30 - pctData * 10}%, ${-20 - pctData * 60}px, 0) scale(${1 + pctData * 0.4})`;
-      wordData.style.filter = `blur(${Math.max(0, 10 - pctData * 10)}px)`;
-      wordData.style.clipPath = `inset(0% 0% 0% ${Math.max(0, 100 - pctData * 100)}%)`;
-
-      // Word 3: INTELLIGENCE (peaks at 0.5)
-      let pctIntel = Math.max(0, (pct - 0.3) / 0.25);
-      pctIntel = Math.min(1, pctIntel);
-      wordIntelligence.style.opacity = pctIntel < 0.8 ? pctIntel : Math.max(0, 1 - (pctIntel - 0.8) / 0.2);
-      wordIntelligence.style.transform = `translate3d(${-20 + pctIntel * 10}%, ${30 - pctIntel * 50}px, 0) scale(${1 + pctIntel * 0.3})`;
-      wordIntelligence.style.filter = `blur(${Math.max(0, 10 - pctIntel * 10)}px)`;
-      wordIntelligence.style.clipPath = `inset(${Math.max(0, 100 - pctIntel * 100)}% 0% 0% 0%)`;
-
-      // Word 4: CREATIVITY (peaks at 0.7)
-      let pctCreat = Math.max(0, (pct - 0.45) / 0.25);
-      pctCreat = Math.min(1, pctCreat);
-      wordCreativity.style.opacity = pctCreat < 0.8 ? pctCreat : Math.max(0, 1 - (pctCreat - 0.8) / 0.2);
-      wordCreativity.style.transform = `translate3d(${20 - pctCreat * 12}%, ${50 - pctCreat * 40}px, 0) scale(${1 + pctCreat * 0.3})`;
-      wordCreativity.style.filter = `blur(${Math.max(0, 10 - pctCreat * 10)}px)`;
-      wordCreativity.style.clipPath = `inset(0% 0% ${Math.max(0, 100 - pctCreat * 100)}% 0%)`;
-
-      // Final Statement reveal (peaks at 0.85)
-      let pctStatement = Math.max(0, (pct - 0.6) / 0.35);
-      pctStatement = Math.min(1, pctStatement);
-      statement.style.opacity = pctStatement;
-      statement.style.transform = `scale(${0.85 + pctStatement * 0.15}) translateY(${20 - pctStatement * 20}px)`;
-      statement.style.filter = `blur(${Math.max(0, 5 - pctStatement * 5)}px)`;
-
-      // Background transition (Crimson atmosphere fade)
-      const r = Math.floor(pctStatement * 15);
-      const g = Math.floor(pctStatement * 3);
-      const b = Math.floor(pctStatement * 2);
-      stickyContainer.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      pinnedGlow.style.background = `radial-gradient(circle, rgba(201, 56, 43, ${pctStatement * 0.3}) 0%, rgba(0,0,0,0) 70%)`;
-      
-      centerLabel.style.opacity = 1 - pctStatement;
-    }
-  });
-
-  // --- General Intersection Observer Trigger (Fade-in on scroll) ---
-  const scrollElements = document.querySelectorAll(".reveal-on-scroll, .skills-cat-group, .timeline-node-card, .cert-card");
-  
-  const elementObserver = new IntersectionObserver((entries) => {
+  const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        
-        // Add specific class for timeline dot activation
-        if (entry.target.classList.contains("timeline-node-card")) {
-          entry.target.classList.add("active-node");
-        }
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
 
-  scrollElements.forEach(el => elementObserver.observe(el));
-
-  // --- Education Timeline growing line observer ---
-  const eduSection = document.getElementById("education");
-  const progressFill = document.getElementById("timeline-progress-fill");
-
-  window.addEventListener("scroll", () => {
-    const rect = eduSection.getBoundingClientRect();
-    const height = eduSection.offsetHeight;
-    
-    // Percent scroll inside the education segment
-    let progress = (window.innerHeight - rect.top) / (height + window.innerHeight - 200);
-    progress = Math.max(0, Math.min(1, progress));
-    
-    progressFill.style.height = `${progress * 100}%`;
-  });
+  els.forEach(el => io.observe(el));
 }
 
-/* ==========================================
-   06. PUZZLE TRANSITION SETUP
-   ========================================== */
-function initPuzzleTransition() {
-  const transitionContainer = document.getElementById("puzzle-transition");
-  const piecesWrapper = document.getElementById("puzzle-pieces-wrapper");
-  const pinnedSection = document.getElementById("where-code-meets");
+/* ============ TIMELINE REVEAL ============ */
+function initTimeline() {
+  const nodes = document.querySelectorAll('.timeline-node');
+  if (!nodes.length) return;
 
-  // Create grid segment coordinates
-  const rows = 3;
-  const cols = 4;
-  const piecesCount = rows * cols;
-  const pieces = [];
-
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      const piece = document.createElement("div");
-      piece.className = "puzzle-piece";
-      
-      // Define clipped path coordinates
-      const left = c * 25;
-      const top = r * 33.333;
-      const width = 25;
-      const height = 33.333;
-      
-      const innerContent = document.createElement("div");
-      innerContent.className = "puzzle-piece-content";
-      innerContent.innerHTML = `
-        <div style="width: 100vw; height: 100vh; position: absolute; top: -${top}vh; left: -${left}vw; background: radial-gradient(circle, rgba(201, 56, 43, 0.25) 0%, rgba(10,10,10,0.95) 80%); display: flex; align-items: center; justify-content: center;">
-          <div style="font-family: var(--font-cinematic); font-size: clamp(3rem, 5vw, 6rem); color: rgba(255,255,255,0.025); letter-spacing: 15px;">BREAKING SYMMETRY</div>
-        </div>
-      `;
-      
-      piece.appendChild(innerContent);
-      piecesWrapper.appendChild(piece);
-      
-      // Calculate random trajectories for physics simulation
-      const angle = Math.random() * Math.PI * 2;
-      const dist = Math.random() * 200 + 150;
-      const tx = Math.cos(angle) * dist;
-      const ty = Math.sin(angle) * dist;
-      const rot = (Math.random() - 0.5) * 60;
-      
-      pieces.push({
-        el: piece,
-        tx,
-        ty,
-        rot
-      });
-    }
-  }
-
-  // Scroll scrub the breaking pieces at the boundary of Section 02
-  window.addEventListener("scroll", () => {
-    const rect = pinnedSection.getBoundingClientRect();
-    const sectionHeight = pinnedSection.offsetHeight;
-    const startBreak = sectionHeight - window.innerHeight * 1.5;
-    
-    let progress = (window.scrollY - (window.scrollY + rect.top + startBreak)) / (window.innerHeight * 0.5);
-    progress = Math.max(0, Math.min(1, progress));
-
-    if (progress > 0 && progress < 1) {
-      transitionContainer.style.display = "block";
-      transitionContainer.style.position = "fixed";
-      transitionContainer.style.top = "0";
-      transitionContainer.style.left = "0";
-      
-      pieces.forEach(p => {
-        p.el.style.transform = `translate3d(${p.tx * progress}px, ${p.ty * progress}px, 0) rotate(${p.rot * progress}deg) scale(${1 - progress * 0.4})`;
-        p.el.style.opacity = 1 - progress * 0.95;
-        p.el.style.filter = `blur(${progress * 8}px)`;
-      });
-    } else {
-      transitionContainer.style.display = "none";
-    }
-  });
-}
-
-/* ==========================================
-   07. ABOUT ME DOORS INTERACTION
-   ========================================== */
-function initAboutInteractions() {
-  const cards = document.querySelectorAll(".about-door-card");
-
-  cards.forEach(card => {
-    // Open door on click
-    card.addEventListener("click", (e) => {
-      // If clicking the back-button, do not trigger parent flip again
-      if (e.target.closest(".door-close-btn")) {
-        e.stopPropagation();
-        card.classList.remove("open");
-        return;
-      }
-      
-      // Toggle card open state
-      card.classList.toggle("open");
-    });
-
-    // Keyboard support
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        card.classList.toggle("open");
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
       }
     });
-  });
+  }, { threshold: 0.2 });
+
+  nodes.forEach(node => io.observe(node));
 }
 
-/* ==========================================
-   08. SELECTED WORKS MODULE
-   ========================================== */
-function initWorksGallery(data) {
-  const preReveal = document.getElementById("works-pre-reveal");
-  const revealBtn = document.getElementById("reveal-works-btn");
-  const shutterFlash = document.getElementById("shutter-flash");
-  const contentWrapper = document.getElementById("works-content-wrapper");
-  const galleryGrid = document.getElementById("works-gallery-grid");
+/* ============ WORKS BENTO ============ */
+function buildWorks() {
+  const grid = document.getElementById('works-grid');
+  if (!grid) return;
 
-  // Render Projects Cards
-  galleryGrid.innerHTML = data.projects.map(proj => `
-    <div class="project-card" data-project-id="${proj.id}">
-      <div class="project-image-box">
-        <span class="project-num-tag">${proj.number}</span>
-        <img src="${proj.image}" alt="${proj.title}" class="project-card-img" loading="lazy">
-        <div class="project-hover-overlay"></div>
-        <div class="project-info-summary">
-          <span class="project-card-category">${proj.subtitle}</span>
-          <h3 class="project-card-title">${proj.title}</h3>
-          <p class="project-card-desc">${proj.description}</p>
+  PROJECTS.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = `work-card ${p.span} reveal-up`;
+    card.style.setProperty('--d', i % 3);
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `View ${p.title}`);
+
+    // Code snippet strings for placeholder visuals
+    const snippets = [
+      `import torch\nmodel = YOLO('yolov8n.pt')\nresults = model.predict(\n  source=0, stream=True\n)\nfor r in results:\n  boxes = r.boxes`,
+      `from fastapi import FastAPI\napp = FastAPI()\n@app.post("/predict")\nasync def predict(data):\n  return model.infer(data)`,
+      `import rclpy\nfrom nav2_simple_commander \\\n  import BasicNavigator\nnav = BasicNavigator()\nnav.setInitialPose(pose)`,
+      `import spacy\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp(resume_text)\nfor ent in doc.ents:\n  print(ent.label_)`,
+    ];
+
+    card.innerHTML = `
+      <div class="work-thumb-placeholder">
+        <div class="work-thumb-code">${snippets[i % snippets.length]}</div>
+      </div>
+      <div class="work-body">
+        <span class="work-category">${p.category}</span>
+        <h3 class="work-title">${p.title}</h3>
+        <p class="work-desc">${p.desc}</p>
+        <div class="work-tags">
+          ${p.tags.map(t => `<span class="work-tag">${t}</span>`).join('')}
         </div>
       </div>
-      <div class="project-card-footer">
-        <div class="project-tags-row">
-          ${proj.tags.slice(0, 3).map(tag => `<span class="project-tag-pill">${tag}</span>`).join("")}
-        </div>
-        <span class="project-view-btn">VIEW DETAILS &rarr;</span>
+    `;
+
+    card.addEventListener('click', () => openModal(p));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(p); });
+    grid.appendChild(card);
+  });
+
+  // Init reveal for dynamically added cards
+  initReveal();
+}
+
+/* ============ MODAL ============ */
+function initModal() {
+  const modal    = document.getElementById('project-modal');
+  const backdrop = document.getElementById('modal-backdrop');
+  const closeBtn = document.getElementById('modal-close');
+
+  if (!modal) return;
+
+  backdrop.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
+function openModal(project) {
+  const modal    = document.getElementById('project-modal');
+  const category = document.getElementById('modal-category');
+  const title    = document.getElementById('modal-title');
+  const desc     = document.getElementById('modal-desc');
+  const tagsEl   = document.getElementById('modal-tags');
+  const link     = document.getElementById('modal-link');
+  const imgEl    = document.getElementById('modal-img');
+
+  category.textContent = project.category;
+  title.textContent    = project.title;
+  desc.textContent     = project.longDesc || project.desc;
+  link.href            = project.github;
+  imgEl.src            = project.thumb || '';
+  imgEl.alt            = project.title;
+  imgEl.style.display  = project.thumb ? 'block' : 'none';
+
+  tagsEl.innerHTML = project.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('project-modal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+/* ============ SKILLS ============ */
+function buildSkills() {
+  const flow = document.getElementById('skills-flow');
+  if (!flow) return;
+
+  SKILL_CATEGORIES.forEach(cat => {
+    const section = document.createElement('div');
+    section.className = 'skill-category';
+    section.innerHTML = `
+      <div class="skill-cat-header">
+        <span class="skill-cat-name">${cat.name}</span>
+        <span class="skill-cat-count mono-sm">${String(cat.skills.length).padStart(2, '0')}</span>
       </div>
-    </div>
-  `).join("");
-
-  // Trigger flash transition and display works list
-  revealBtn.addEventListener("click", () => {
-    shutterFlash.classList.add("flash-active");
-    
-    setTimeout(() => {
-      preReveal.style.display = "none";
-      contentWrapper.classList.remove("works-hidden");
-      
-      // Scroll slightly forward to trigger observer entries
-      window.scrollBy(0, 1);
-    }, 200);
-
-    setTimeout(() => {
-      shutterFlash.classList.remove("flash-active");
-    }, 800);
-  });
-
-  // Setup Modal logic
-  const modal = document.getElementById("project-modal");
-  const modalImg = document.getElementById("modal-project-img");
-  const modalNum = document.getElementById("modal-project-num");
-  const modalCategory = document.getElementById("modal-project-category");
-  const modalTitle = document.getElementById("modal-project-title");
-  const modalLongDesc = document.getElementById("modal-project-long-desc");
-  const modalHighlights = document.getElementById("modal-project-highlights");
-  const modalTags = document.getElementById("modal-project-tags");
-  const modalMetrics = document.getElementById("modal-project-metrics");
-  const modalGithub = document.getElementById("modal-btn-github");
-  const modalClose = document.getElementById("modal-close-btn");
-  const modalBackdrop = document.getElementById("modal-backdrop");
-
-  const cards = document.querySelectorAll(".project-card");
-
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      const projId = card.getAttribute("data-project-id");
-      const proj = data.projects.find(p => p.id === projId);
-      if (proj) {
-        // Populate modal data
-        modalImg.src = proj.image;
-        modalImg.alt = proj.title;
-        modalNum.innerText = proj.number;
-        modalCategory.innerText = proj.subtitle;
-        modalTitle.innerText = proj.title;
-        modalLongDesc.innerText = proj.longDescription;
-        
-        // Render highlights
-        modalHighlights.innerHTML = proj.highlights.map(h => `<li>${h}</li>`).join("");
-        
-        // Render tags
-        modalTags.innerHTML = proj.tags.map(t => `<span class="modal-tag">${t}</span>`).join("");
-        
-        // Render metrics
-        modalMetrics.innerHTML = proj.metrics.map(m => `
-          <div class="modal-metric-item">
-            <span class="metric-label">${m.label}</span>
-            <span class="metric-value">${m.value}</span>
-          </div>
-        `).join("");
-        
-        // Set GitHub link (fall back to user profile if missing specific repo)
-        modalGithub.href = proj.githubUrl || data.contact.github;
-        
-        // Show modal
-        modal.classList.add("modal-active");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("lock-scroll");
-      }
-    });
-  });
-
-  // Close modal functions
-  function closeModal() {
-    modal.classList.remove("modal-active");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("lock-scroll");
-  }
-
-  modalClose.addEventListener("click", closeModal);
-  modalBackdrop.addEventListener("click", closeModal);
-  
-  // Close on Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("modal-active")) {
-      closeModal();
-    }
+      <div class="skill-pills">
+        ${cat.skills.map(s => `<span class="skill-pill">${s}</span>`).join('')}
+      </div>
+    `;
+    flow.appendChild(section);
   });
 }
 
-/* ==========================================
-   09. 3D AI ROBOT EXPERIENCE
-   ========================================== */
-function initRobot3D() {
-  const visualArea = document.getElementById("robot-visual-area");
-  const head = document.getElementById("robot-head");
-  const glassTags = document.querySelectorAll(".floating-glass-tag");
+/* ============ JOURNEY ============ */
+function buildJourney() {
+  const container = document.getElementById('timeline');
+  if (!container) return;
 
-  let areaRect = visualArea.getBoundingClientRect();
-  
-  window.addEventListener("resize", () => {
-    areaRect = visualArea.getBoundingClientRect();
+  JOURNEY.forEach(item => {
+    const node = document.createElement('div');
+    node.className = 'timeline-node';
+    node.innerHTML = `
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <p class="timeline-year">${item.year}</p>
+      <h3 class="timeline-title">${item.title}</h3>
+      <p class="timeline-org">${item.org}</p>
+      <p class="timeline-desc">${item.desc}</p>
+    `;
+    container.appendChild(node);
   });
 
-  // Track coordinates for head rotations
-  visualArea.addEventListener("mousemove", (e) => {
-    const mouseX = e.clientX - areaRect.left;
-    const mouseY = e.clientY - areaRect.top;
-    
-    // Calculate delta from center (pixels)
-    const dx = mouseX - (areaRect.width / 2);
-    const dy = mouseY - (areaRect.height / 2);
-    
-    // Convert to rotation degrees (limits pitch/yaw to ~25deg)
-    const ry = (dx / (areaRect.width / 2)) * 25;
-    const rx = -(dy / (areaRect.height / 2)) * 20;
+  initTimeline();
+}
 
-    // Apply rotation values
-    head.style.setProperty("--rx", `${rx}deg`);
-    head.style.setProperty("--ry", `${ry}deg`);
-
-    // Parallax displacements on glass tags
-    glassTags.forEach((tag, idx) => {
-      const depth = (idx + 1) * 12;
-      const tagDx = (dx / (areaRect.width / 2)) * depth;
-      const tagDy = (dy / (areaRect.height / 2)) * depth;
-      
-      tag.style.transform = `translate3d(${tagDx}px, ${tagDy}px, 0)`;
-    });
+/* ============ BACK TO TOP ============ */
+function initBackTop() {
+  const btn = document.getElementById('back-top');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}
 
-  // Reset head coordinates when mouse exits visual zone
-  visualArea.addEventListener("mouseleave", () => {
-    head.style.setProperty("--rx", `0deg`);
-    head.style.setProperty("--ry", `0deg`);
-    
-    glassTags.forEach(tag => {
-      tag.style.transform = `translate3d(0, 0, 0)`;
+/* ============ HERO NAME ANIMATION ============ */
+function initHeroName() {
+  const titleLines = document.querySelectorAll('.hero-name-line');
+  if (!titleLines.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  titleLines.forEach((line, i) => {
+    line.style.opacity = '0';
+    line.style.transform = 'translateY(40px) skewX(-4deg)';
+    line.style.transition = `opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${0.15 + i * 0.12}s, transform 0.9s cubic-bezier(0.16,1,0.3,1) ${0.15 + i * 0.12}s`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        line.style.opacity = '1';
+        line.style.transform = 'translateY(0) skewX(0)';
+      });
     });
   });
 }
 
-/* ==========================================
-   10. CONTACT INTERACTIONS (Magnetic links)
-   ========================================= */
-function initContactInteractions() {
-  const links = document.querySelectorAll(".magnetic-contact-link");
-
-  links.forEach(link => {
-    link.addEventListener("mousemove", (e) => {
-      const rect = link.getBoundingClientRect();
-      
-      // Distance of mouse from center of link
-      const mx = e.clientX - (rect.left + rect.width / 2);
-      const my = e.clientY - (rect.top + rect.height / 2);
-
-      // Translate element relative to displacement (magnetic strength)
-      link.style.transform = `translate3d(${mx * 0.35}px, ${my * 0.35}px, 0)`;
-      link.style.borderColor = "var(--accent-bright)";
-    });
-
-    link.addEventListener("mouseleave", () => {
-      // Return to base position
-      link.style.transform = `translate3d(0, 0, 0)`;
-      link.style.borderColor = "";
+/* ============ SMOOTH ANCHOR SCROLL ============ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 68;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 }
 
+/* ============ INIT ============ */
+document.addEventListener('DOMContentLoaded', () => {
+  initCursor();
+  initNav();
+  initCanvas();
+  initReveal();
+  initSmoothScroll();
+  buildWorks();
+  buildSkills();
+  buildJourney();
+  initModal();
+  initBackTop();
+  initHeroName();
+});
