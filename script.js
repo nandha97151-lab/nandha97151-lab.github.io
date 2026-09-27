@@ -14,7 +14,7 @@ const PROJECTS = [
     desc: 'Real-time object detection and tracking pipeline using YOLOv8 and OpenCV. Deployed on edge hardware for low-latency inference.',
     longDesc: 'A full edge-ML pipeline combining YOLOv8 for multi-class detection with a Kalman-filter tracker. The system runs at 30 FPS on an NVIDIA Jetson Nano, with configurable alert zones and a Flask-based monitoring dashboard.',
     tags: ['Python', 'YOLOv8', 'OpenCV', 'Jetson Nano'],
-    thumb: '',
+    thumb: 'assets/proj_object_tracker.jpg',
     github: 'https://github.com/nandha97151-lab',
     span: 'span-7',
   },
@@ -25,7 +25,7 @@ const PROJECTS = [
     desc: 'LSTM-based anomaly detection for industrial sensor streams. Reduces unplanned downtime by catching failures before they occur.',
     longDesc: 'Time-series forecasting system using stacked LSTMs trained on multi-sensor industrial data. Includes a feature-engineering pipeline, explainability layer (SHAP values), and a REST API for real-time scoring.',
     tags: ['Python', 'TensorFlow', 'LSTM', 'SHAP', 'FastAPI'],
-    thumb: '',
+    thumb: 'assets/proj_predictive_ml.jpg',
     github: 'https://github.com/nandha97151-lab',
     span: 'span-5',
   },
@@ -36,7 +36,7 @@ const PROJECTS = [
     desc: 'ROS2-based differential drive robot with LiDAR SLAM and A* path planning. Navigates dynamic environments without manual input.',
     longDesc: 'Built on ROS2 Humble with a differential-drive chassis. Integrates RPLiDAR A1 for 2D SLAM (cartographer), obstacle inflation layers, and a custom recovery behavior. Tested in a simulated warehouse environment (Gazebo) and on physical hardware.',
     tags: ['C++', 'ROS2', 'LiDAR', 'SLAM', 'Python'],
-    thumb: '',
+    thumb: 'assets/proj_nav_bot.jpg',
     github: 'https://github.com/nandha97151-lab',
     span: 'span-4',
   },
@@ -47,7 +47,7 @@ const PROJECTS = [
     desc: 'NLP-powered tool that extracts key skills and gaps from resumes against job descriptions, returning structured feedback.',
     longDesc: 'Full-stack application using spaCy and sentence-transformers for semantic similarity scoring between resumes and JDs. React frontend with a FastAPI backend, deployed on Render with PostgreSQL for storing session data.',
     tags: ['Python', 'spaCy', 'React', 'FastAPI', 'PostgreSQL'],
-    thumb: '',
+    thumb: 'assets/proj_resume_ai.jpg',
     github: 'https://github.com/nandha97151-lab',
     span: 'span-8',
   },
@@ -78,7 +78,7 @@ const SKILL_CATEGORIES = [
 
 const JOURNEY = [
   {
-    year: '2027 / PRESENT',
+    year: '2022 / PRESENT',
     title: 'B.Tech Artificial Intelligence & Data Science',
     org: 'KPR Institute of Engineering and Technology, Coimbatore',
     desc: 'Coursework in machine learning, deep learning, computer vision, natural language processing, and autonomous systems. Hands-on project work each semester.',
@@ -303,18 +303,12 @@ function buildWorks() {
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', `View ${p.title}`);
 
-    // Code snippet strings for placeholder visuals
-    const snippets = [
-      `import torch\nmodel = YOLO('yolov8n.pt')\nresults = model.predict(\n  source=0, stream=True\n)\nfor r in results:\n  boxes = r.boxes`,
-      `from fastapi import FastAPI\napp = FastAPI()\n@app.post("/predict")\nasync def predict(data):\n  return model.infer(data)`,
-      `import rclpy\nfrom nav2_simple_commander \\\n  import BasicNavigator\nnav = BasicNavigator()\nnav.setInitialPose(pose)`,
-      `import spacy\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp(resume_text)\nfor ent in doc.ents:\n  print(ent.label_)`,
-    ];
+    const thumbHTML = p.thumb
+      ? `<img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="lazy">`
+      : `<div class="work-thumb-placeholder"><span class="work-thumb-label">${p.category}</span></div>`;
 
     card.innerHTML = `
-      <div class="work-thumb-placeholder">
-        <div class="work-thumb-code">${snippets[i % snippets.length]}</div>
-      </div>
+      ${thumbHTML}
       <div class="work-body">
         <span class="work-category">${p.category}</span>
         <h3 class="work-title">${p.title}</h3>
