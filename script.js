@@ -106,7 +106,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'Input', 'AI Processing', 'Response'],
     features: ['Context management', 'Real-time response streaming', 'Transformer NLP', 'Custom personality tuning'],
     tags: ['Python', 'Transformers', 'FastAPI', 'React'],
-    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
+    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
     num: '11', code: 'TRAVEL PLAN', category: 'WEB / PLANNING',
@@ -126,7 +126,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Input', 'Expression', 'Evaluate', 'History'],
     features: ['Keyboard access', 'Animated transitions', 'Calculation history', 'Responsive UI'],
     tags: ['HTML', 'CSS', 'Vanilla JS'],
-    thumb: 'assets/projects/solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
     num: '13', code: 'LOST & FOUND', category: 'JAVA / MANAGEMENT',
@@ -136,7 +136,7 @@ const FEATURED_PROJECTS = [
     architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
     features: ['Item registration', 'Automatic matching', 'User notifications', 'Database persistence'],
     tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
-    thumb: 'assets/projects/air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
+    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
     num: '14', code: 'DATA STORIES', category: 'DATA SCIENCE / VISUALIZATION',
@@ -156,7 +156,7 @@ const FEATURED_PROJECTS = [
     architecture: ['Design System', 'Component Layout', 'Scroll Reveal', 'Modal System', 'Canvas Particles'],
     features: ['Particle canvas', 'Spring-physics cursor', 'Bento-grid', 'GSAP ScrollTrigger', 'Lenis Smooth Scroll'],
     tags: ['HTML5', 'CSS3', 'Vanilla JS', 'GSAP', 'Lenis', 'Three.js'],
-    thumb: 'assets/proj_portfolio.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'You Are Here', span: 'span-4'
+    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'You Are Here', span: 'span-4'
   }
 ];
 
@@ -410,7 +410,12 @@ function buildWorks() {
 
     card.innerHTML = `
       <div class="work-thumb-wrap">
-        <img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="lazy">
+        <img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="lazy"
+          onerror="this.style.display='none';this.parentElement.querySelector('.work-thumb-fallback').style.display='flex'">
+        <div class="work-thumb-fallback" style="display:none;position:absolute;inset:0;background:linear-gradient(135deg,#1a0a0a 0%,#0d1117 50%,#0c0c0e 100%);align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <span style="font-family:var(--f-mono);font-size:28px;color:rgba(201,56,43,0.4);">${p.num}</span>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:0.2em;color:rgba(201,56,43,0.5);text-transform:uppercase;">${p.code}</span>
+        </div>
         <div class="work-thumb-overlay"></div>
       </div>
       <div class="work-body">
