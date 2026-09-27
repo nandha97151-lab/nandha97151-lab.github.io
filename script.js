@@ -9,176 +9,155 @@
 /* ============ FEATURED PROJECTS ============ */
 const FEATURED_PROJECTS = [
   {
-    num: '01',
-    code: 'KUTTY LABS',
-    category: 'AI / ROBOTICS / AUTONOMOUS SYSTEMS',
-    title: 'Kutty — Campus Delivery Robot',
-    subtitle: 'Autonomous AI-powered robot that navigates college campuses and delivers items between designated locations.',
-    overview: 'Kutty is a fully autonomous differential-drive delivery robot built for campus environments. It fuses LiDAR-based SLAM, computer vision, and A* pathfinding to navigate between pickup and drop points without any manual control.',
-    problem: 'Campus deliveries between departments are slow, manual, and error-prone. There was no scalable, autonomous solution for indoor/outdoor campus logistics.',
-    solution: 'Built a custom robot on Raspberry Pi 5 + ESP32 with RPLiDAR, ultrasonic, IR sensors, and a camera. A* pathfinding runs over a digital twin of the campus. A web dashboard provides real-time tracking and task dispatching.',
+    num: '01', code: 'KUTTY LABS', category: 'AI / ROBOTICS / AUTONOMOUS SYSTEMS',
+    title: 'Kutty — Campus Delivery Robot', subtitle: 'Autonomous AI-powered robot that navigates college campuses.',
+    overview: 'Kutty is a fully autonomous differential-drive delivery robot built for campus environments. It fuses LiDAR-based SLAM, computer vision, and A* pathfinding.',
+    problem: 'Campus deliveries between departments are slow, manual, and error-prone.', solution: 'Built a custom robot on Raspberry Pi 5 + ESP32 with RPLiDAR.',
     architecture: ['Dashboard', 'Digital Campus Twin', 'A* Pathfinding', 'Robot Controller', 'Sensors'],
-    features: ['Autonomous A* navigation with real-time replanning', 'LiDAR SLAM for dynamic map generation', 'Campus digital twin integration', 'Live delivery tracking dashboard', 'Multi-sensor fusion (LiDAR, Ultrasonic, IR, IMU)','Computer vision for obstacle and landmark detection'],
+    features: ['Autonomous A* navigation', 'LiDAR SLAM', 'Campus digital twin integration', 'Live delivery tracking dashboard'],
     tags: ['Raspberry Pi 5', 'ESP32', 'RPLiDAR', 'Computer Vision', 'A* Algorithm', 'SLAM', 'Python', 'OpenCV'],
-    thumb: 'assets/proj_kutty.jpg',
-    github: 'https://github.com/nandha97151-lab',
-    cta: 'Explore Kutty',
-    span: 'span-8',
+    thumb: 'assets/proj_kutty.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Kutty', span: 'span-8'
   },
   {
-    num: '02',
-    code: 'SECURE ID',
-    category: 'BLOCKCHAIN / CYBERSECURITY',
-    title: 'Blockchain Identity Platform',
-    subtitle: 'Decentralized identity, access control, digital asset management, and secure voting on a single chain.',
-    overview: 'A blockchain-based platform combining decentralized identity (DID), role-based access control, smart contracts, and a fake-vote prevention voting system. Sensitive data stays off-chain; only hashes, proofs, and permissions live on-chain.',
-    problem: 'Centralized identity systems are single points of failure. Digital voting is vulnerable to duplication and fraud. Asset ownership lacks trustless verification.',
-    solution: 'Built a decentralized system where each user has a verifiable on-chain identity. Smart contracts enforce RBAC/ABAC permissions. Voting enforces one verified person = one valid vote using ZK-proof concepts.',
+    num: '02', code: 'SECURE ID', category: 'BLOCKCHAIN / CYBERSECURITY',
+    title: 'Blockchain Identity Platform', subtitle: 'Decentralized identity, access control, and secure voting.',
+    overview: 'A blockchain-based platform combining decentralized identity (DID), role-based access control, smart contracts.',
+    problem: 'Centralized identity systems are single points of failure.', solution: 'Built a decentralized system with verifiable on-chain identity.',
     architecture: ['Identity', 'Verification', 'Smart Contract', 'Permission', 'Blockchain', 'Asset / Vote'],
-    features: ['Decentralized identity (DID)', 'Smart contract access control (RBAC/ABAC)', 'Digital asset ownership and transfer', 'Secure voting with duplicate prevention', 'Off-chain sensitive data, on-chain proofs', 'Privacy-aware data storage'],
+    features: ['Decentralized identity (DID)', 'Smart contract access control', 'Secure voting', 'Privacy-aware storage'],
     tags: ['Blockchain', 'Smart Contracts', 'Solidity', 'Web3.js', 'IPFS', 'Node.js', 'React'],
-    thumb: 'assets/proj_blockchain.jpg',
-    github: 'https://github.com/nandha97151-lab',
-    cta: 'Explore Platform',
-    span: 'span-4',
+    thumb: 'assets/proj_blockchain.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Platform', span: 'span-4'
   },
   {
-    num: '03',
-    code: 'EDUVERSE',
-    category: 'EDTECH / AI / WEB',
-    title: 'EduVerse — Learning Platform',
-    subtitle: 'Modern AI-powered education platform with adaptive courses, quizzes, and intelligent study assistance.',
-    overview: 'EduVerse is a full-stack edtech platform featuring course management, adaptive quizzes, an AI study assistant, a progress analytics dashboard, and separate teacher and student panels.',
-    problem: 'Students lack a unified platform that combines structured learning, adaptive feedback, AI tutoring, and performance tracking in one place.',
-    solution: 'Built a multi-module platform with React frontend and Node.js backend. AI study assistant answers course-specific queries. Progress analytics uses completion data and quiz performance to generate study recommendations.',
+    num: '03', code: 'EDUVERSE', category: 'EDTECH / AI / WEB',
+    title: 'EduVerse — Learning Platform', subtitle: 'Modern AI-powered education platform with adaptive courses.',
+    overview: 'EduVerse is a full-stack edtech platform featuring course management, adaptive quizzes, an AI study assistant.',
+    problem: 'Students lack a unified platform that combines structured learning and AI tutoring.', solution: 'Built a multi-module platform with React frontend and Node.js backend.',
     architecture: ['Student', 'Course', 'AI Assistant', 'Quiz', 'Analytics', 'Progress'],
-    features: ['Adaptive course tracking and completion', 'Interactive quiz system with instant feedback', 'AI study assistant (NLP-powered)', 'Progress analytics and study planning', 'Leaderboard and gamification', 'Separate teacher and student dashboards','Notes and resource management'],
+    features: ['Adaptive course tracking', 'Interactive quiz system', 'AI study assistant', 'Progress analytics'],
     tags: ['React', 'Node.js', 'Python', 'NLP', 'MongoDB', 'FastAPI', 'Chart.js'],
-    thumb: 'assets/proj_eduverse.jpg',
-    github: 'https://github.com/nandha97151-lab',
-    cta: 'Explore Platform',
-    span: 'span-6',
+    thumb: 'assets/proj_eduverse.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Platform', span: 'span-6'
   },
   {
-    num: '15',
-    code: 'PORTFOLIO 2.0',
-    category: 'WEB / CREATIVE DEVELOPMENT',
-    title: 'Portfolio 2.0',
-    subtitle: 'Cinematic personal portfolio with scroll-driven storytelling, particle canvas, and interactive project showcase.',
-    overview: 'This portfolio itself is a project — built with pure HTML, CSS, and vanilla JavaScript. No frameworks. Features a particle canvas with connection lines, custom cursor with spring physics, IntersectionObserver scroll reveals, bento grid layouts, and full case study modals.',
-    problem: 'Most developer portfolios look templated and generic. The design should feel as precise and intentional as the engineering behind it.',
-    solution: 'Developed a complete cinematic dark-tech identity. Every section has its own layout logic. The JS is modular and data-driven. All animation is performance-first using CSS transitions and IntersectionObserver.',
-    architecture: ['Design System', 'Component Layout', 'Scroll Reveal', 'Modal System', 'Canvas Particles'],
-    features: ['Particle canvas with dynamic connection lines', 'Custom spring-physics cursor', 'Bento-grid project section', 'Full case study modal for each project', 'Horizontal scroll journey timeline', 'WCAG-compliant + reduced-motion support'],
-    tags: ['HTML5', 'CSS3', 'Vanilla JS', 'IntersectionObserver', 'Canvas API', 'CSS Grid'],
-    thumb: 'assets/proj_portfolio.jpg',
-    github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io',
-    cta: 'You Are Here',
-    span: 'span-6',
-  },
-];
-
-/* ============ ARCHIVE PROJECTS ============ */
-const ARCHIVE_PROJECTS = [
-  {
-    num: '04', title: 'Smart Campus Portal',
-    subtitle: 'Connected digital campus management — attendance, timetable, events, assignments, and notices.',
-    category: 'WEB / MANAGEMENT',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    num: '04', code: 'SMART CAMPUS', category: 'WEB / MANAGEMENT',
+    title: 'Smart Campus Portal', subtitle: 'Connected digital campus management.',
+    overview: 'A unified campus management portal that digitizes attendance tracking, timetable management, event coordination, and academic notices.',
+    problem: 'Campus management relies on fragmented systems and physical notices.', solution: 'Developed a unified dashboard unifying student, faculty, and admin data.',
     architecture: ['Student', 'Portal', 'Services', 'Campus Data'],
-    overview: 'A unified campus management portal that digitizes attendance tracking, timetable management, event coordination, and academic notices for students and faculty.',
-    thumb: '',
+    features: ['Attendance tracking', 'Timetable management', 'Event coordination', 'Academic notices'],
+    tags: ['React', 'Node.js', 'MongoDB'],
+    thumb: 'assets/proj_campus_1790479280224.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
-    num: '05', title: 'E-Commerce Platform',
-    subtitle: 'Modern digital shopping experience with product browsing, cart, checkout, orders, and admin dashboard.',
-    category: 'WEB / E-COMMERCE',
-    tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-    architecture: ['Discover', 'Product', 'Cart', 'Checkout', 'Order'],
+    num: '05', code: 'E-COMMERCE', category: 'WEB / E-COMMERCE',
+    title: 'E-Commerce Platform', subtitle: 'Modern digital shopping experience with product browsing and admin dashboard.',
     overview: 'A full-stack e-commerce platform with product categories, search, filters, shopping cart, payment integration, order tracking, and an admin inventory dashboard.',
-    thumb: '',
+    problem: 'Businesses need scalable online stores with seamless payment and inventory.', solution: 'Built a responsive React/Node app utilizing Stripe for secure payments.',
+    architecture: ['Discover', 'Product', 'Cart', 'Checkout', 'Order'],
+    features: ['Product browsing', 'Shopping Cart', 'Payment Integration', 'Admin Dashboard'],
+    tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
+    thumb: 'assets/proj_ecommerce_1790479293551.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
-    num: '06', title: 'Smart Agriculture System',
-    subtitle: 'Data-driven IoT agriculture with crop monitoring, soil data, and smart recommendations.',
-    category: 'AI / IOT / AGRICULTURE',
-    tags: ['Python', 'IoT', 'MQTT', 'TensorFlow', 'React'],
-    architecture: ['Sensors', 'Data', 'Analysis', 'Recommendation', 'Farmer'],
+    num: '06', code: 'SMART AGRI', category: 'AI / IOT / AGRICULTURE',
+    title: 'Smart Agriculture System', subtitle: 'Data-driven IoT agriculture with crop monitoring.',
     overview: 'A smart agriculture system that collects soil moisture, temperature, and humidity data from IoT sensors, then uses ML models to generate crop-specific recommendations.',
-    thumb: '',
+    problem: 'Traditional farming lacks real-time, data-driven soil and environment monitoring.', solution: 'Deployed IoT nodes communicating with a central ML engine for crop predictions.',
+    architecture: ['Sensors', 'Data', 'Analysis', 'Recommendation', 'Farmer'],
+    features: ['Soil monitoring', 'Temperature tracking', 'ML Crop Recommendations', 'Live Dashboard'],
+    tags: ['Python', 'IoT', 'MQTT', 'TensorFlow', 'React'],
+    thumb: 'assets/proj_agri_1790479309851.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
   },
   {
-    num: '07', title: 'Smart Parking System',
-    subtitle: 'Intelligent parking slot detection, reservation, and real-time availability dashboard.',
-    category: 'AI / IOT / SMART CITY',
-    tags: ['Python', 'OpenCV', 'IoT', 'React', 'Flask'],
-    architecture: ['Vehicle', 'Detection', 'Slot Availability', 'Reservation', 'Parking'],
+    num: '07', code: 'SMART PARKING', category: 'AI / IOT / SMART CITY',
+    title: 'Smart Parking System', subtitle: 'Intelligent parking slot detection and reservation.',
     overview: 'A camera-based parking management system that detects occupied/vacant slots using computer vision and allows users to reserve slots via a web interface.',
-    thumb: '',
+    problem: 'Finding vacant parking in busy cities causes traffic and wasted fuel.', solution: 'Implemented an overhead CV model to map spaces and update a live reservation app.',
+    architecture: ['Vehicle', 'Detection', 'Slot Availability', 'Reservation', 'Parking'],
+    features: ['Computer Vision slot detection', 'Real-time availability', 'Mobile reservation app', 'Analytics'],
+    tags: ['Python', 'OpenCV', 'IoT', 'React', 'Flask'],
+    thumb: 'assets/proj_parking_1790479321897.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-7'
   },
   {
-    num: '08', title: 'Hospital Management System',
-    subtitle: 'Digital hospital management — patients, doctors, appointments, records, and billing.',
-    category: 'SOFTWARE / MANAGEMENT',
-    tags: ['Java', 'MySQL', 'JavaFX'],
-    architecture: ['Patient', 'Appointment', 'Doctor', 'Record', 'Billing'],
+    num: '08', code: 'HOSPITAL MGMT', category: 'SOFTWARE / MANAGEMENT',
+    title: 'Hospital Management System', subtitle: 'Digital hospital management — patients, doctors, records.',
     overview: 'A comprehensive hospital management system built in Java covering patient registration, doctor scheduling, appointment management, medical records, and billing.',
-    thumb: '',
+    problem: 'Paper-based medical records and manual scheduling lead to inefficiencies.', solution: 'Engineered a secure Java-based desktop client for end-to-end administration.',
+    architecture: ['Patient', 'Appointment', 'Doctor', 'Record', 'Billing'],
+    features: ['Patient Registration', 'Doctor Scheduling', 'Medical Records', 'Billing generation'],
+    tags: ['Java', 'MySQL', 'JavaFX'],
+    thumb: 'assets/proj_hospital_1790479373830.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-5'
   },
   {
-    num: '09', title: 'Smart Billing System',
-    subtitle: 'Shopkeeper POS with product management, billing, inventory, and Tamil product name support.',
-    category: 'WEB / BUSINESS',
-    tags: ['React', 'Node.js', 'SQLite', 'Electron'],
-    architecture: ['Product', 'Cart', 'Bill', 'Payment', 'Inventory'],
+    num: '09', code: 'SMART BILLING', category: 'WEB / BUSINESS',
+    title: 'Smart Billing System', subtitle: 'Shopkeeper POS with inventory and Tamil language support.',
     overview: 'A point-of-sale and inventory management system for small businesses. Supports Tamil product names, barcode scanning, inventory tracking, and sales reports.',
-    thumb: '',
+    problem: 'Local shopkeepers struggle with English-only POS software and manual accounting.', solution: 'Developed a localized bilingual POS with offline-first capabilities.',
+    architecture: ['Product', 'Cart', 'Bill', 'Payment', 'Inventory'],
+    features: ['Tamil language support', 'Barcode scanning', 'Inventory tracking', 'Sales analytics'],
+    tags: ['React', 'Node.js', 'SQLite', 'Electron'],
+    thumb: 'assets/proj_billing_1790479387801.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
-    num: '10', title: 'AI Chatbot Assistant',
-    subtitle: 'Intelligent conversational AI interface with NLP response generation and conversation history.',
-    category: 'AI / NLP / WEB',
-    tags: ['Python', 'Transformers', 'FastAPI', 'React'],
-    architecture: ['User', 'Input', 'AI Processing', 'Response'],
+    num: '10', code: 'AI CHATBOT', category: 'AI / NLP / WEB',
+    title: 'AI Chatbot Assistant', subtitle: 'Conversational AI interface with NLP response generation.',
     overview: 'A modern chatbot interface powered by a fine-tuned transformer model. Features conversation history, context management, and a futuristic UI with real-time response streaming.',
-    thumb: '',
+    problem: 'Static FAQs lack contextual awareness and natural conversation flow.', solution: 'Integrated a fine-tuned Transformer model wrapped in a high-performance FastAPI backend.',
+    architecture: ['User', 'Input', 'AI Processing', 'Response'],
+    features: ['Context management', 'Real-time response streaming', 'Transformer NLP', 'Custom personality tuning'],
+    tags: ['Python', 'Transformers', 'FastAPI', 'React'],
+    thumb: 'assets/proj_kutty.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
-    num: '11', title: 'Smart Travel Planner',
-    subtitle: 'Intelligent travel planning — itinerary, places, activities, budget, and schedule in one dashboard.',
-    category: 'WEB / PLANNING',
-    tags: ['React', 'Google Maps API', 'Node.js', 'MongoDB'],
-    architecture: ['Destination', 'Plan', 'Explore', 'Itinerary', 'Trip'],
+    num: '11', code: 'TRAVEL PLAN', category: 'WEB / PLANNING',
+    title: 'Smart Travel Planner', subtitle: 'Intelligent travel planning — itinerary, budget, and schedule.',
     overview: 'A travel planning web app that combines interactive maps, itinerary builder, activity suggestions, and budget tracking to help users plan and organize trips end-to-end.',
-    thumb: '',
+    problem: 'Travel planning requires juggling multiple apps for booking, mapping, and budgeting.', solution: 'Created a unified portal that aggregates maps and budgeting seamlessly.',
+    architecture: ['Destination', 'Plan', 'Explore', 'Itinerary', 'Trip'],
+    features: ['Interactive mapping', 'Itinerary building', 'Activity suggestions', 'Budget tracking'],
+    tags: ['React', 'Google Maps API', 'Node.js', 'MongoDB'],
+    thumb: 'assets/proj_ecommerce_1790479293551.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-4'
   },
   {
-    num: '12', title: 'Smart Calculator',
-    subtitle: 'Minimal interactive calculator with arithmetic operations, keyboard support, and calculation history.',
-    category: 'WEB / JAVASCRIPT',
-    tags: ['HTML', 'CSS', 'Vanilla JS'],
-    architecture: ['Input', 'Expression', 'Evaluate', 'History'],
+    num: '12', code: 'SMART CALC', category: 'WEB / JAVASCRIPT',
+    title: 'Smart Calculator', subtitle: 'Minimal interactive calculator with history.',
     overview: 'A beautifully designed, keyboard-accessible calculator with animated interactions, calculation history panel, and responsive layout. A minimal project with premium polish.',
-    thumb: '',
+    problem: 'Default OS calculators lack design aesthetic and robust history tracking.', solution: 'Built an Awwwards-style web calculator focused entirely on micro-interactions.',
+    architecture: ['Input', 'Expression', 'Evaluate', 'History'],
+    features: ['Keyboard access', 'Animated transitions', 'Calculation history', 'Responsive UI'],
+    tags: ['HTML', 'CSS', 'Vanilla JS'],
+    thumb: 'assets/proj_campus_1790479280224.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
-    num: '13', title: 'Lost & Found System',
-    subtitle: 'Java-based management system for registering, searching, and matching lost and found items.',
-    category: 'JAVA / MANAGEMENT',
-    tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
-    architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
+    num: '13', code: 'LOST & FOUND', category: 'JAVA / MANAGEMENT',
+    title: 'Lost & Found System', subtitle: 'Java-based management system for registering and matching items.',
     overview: 'A Java Swing/JavaFX application for managing lost and found items. Users register lost or found items, and the system automatically matches records and notifies claimants.',
-    thumb: '',
+    problem: 'Institutions use inefficient, disjointed physical ledgers for lost items.', solution: 'Engineered an automated matching engine based on physical item attributes.',
+    architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
+    features: ['Item registration', 'Automatic matching', 'User notifications', 'Database persistence'],
+    tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
+    thumb: 'assets/proj_hospital_1790479373830.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-6'
   },
   {
-    num: '14', title: 'Data Stories',
-    subtitle: 'Interactive data analysis and visualization — raw data to insight through transformation and charts.',
-    category: 'DATA SCIENCE / VISUALIZATION',
-    tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter'],
-    architecture: ['Raw Data', 'Transformation', 'Analysis', 'Visualization', 'Insight'],
+    num: '14', code: 'DATA STORIES', category: 'DATA SCIENCE / VISUALIZATION',
+    title: 'Data Stories', subtitle: 'Interactive data analysis and visualization.',
     overview: 'A collection of data analysis notebooks covering transformation, conditional columns, API data, statistical analysis, bar plots, scatter plots, heatmaps, and insight narratives.',
-    thumb: '',
+    problem: 'Raw data is unreadable to non-technical stakeholders.', solution: 'Generated rich visualization notebooks and dashboards converting data to narratives.',
+    architecture: ['Raw Data', 'Transformation', 'Analysis', 'Visualization', 'Insight'],
+    features: ['Statistical analysis', 'Bar & Scatter plots', 'Heatmap generation', 'Data cleaning'],
+    tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter'],
+    thumb: 'assets/proj_blockchain.jpg', github: 'https://github.com/nandha97151-lab', cta: 'View Project', span: 'span-8'
   },
+  {
+    num: '15', code: 'PORTFOLIO 2.0', category: 'WEB / CREATIVE DEVELOPMENT',
+    title: 'Portfolio 2.0', subtitle: 'Cinematic personal portfolio with scroll-driven storytelling.',
+    overview: 'This portfolio itself is a project — built with pure HTML, CSS, and vanilla JavaScript. Features a particle canvas, custom cursor, GSAP ScrollTrigger, and full case study modals.',
+    problem: 'Most developer portfolios look templated and generic.', solution: 'Developed a complete cinematic dark-tech identity with zero frontend frameworks.',
+    architecture: ['Design System', 'Component Layout', 'Scroll Reveal', 'Modal System', 'Canvas Particles'],
+    features: ['Particle canvas', 'Spring-physics cursor', 'Bento-grid', 'GSAP ScrollTrigger', 'Lenis Smooth Scroll'],
+    tags: ['HTML5', 'CSS3', 'Vanilla JS', 'GSAP', 'Lenis', 'Three.js'],
+    thumb: 'assets/proj_portfolio.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'You Are Here', span: 'span-4'
+  }
 ];
 
 /* ============ SKILLS ============ */
@@ -191,58 +170,6 @@ const SKILL_CATEGORIES = [
   { name: 'Data & Tools',            skills: ['SQL', 'MongoDB', 'Jupyter', 'Docker', 'Git', 'Linux', 'Matplotlib', 'Seaborn'] },
 ];
 
-/* ============ JOURNEY ============ */
-const JOURNEY_NODES = [
-  {
-    year: '2020',
-    label: 'SSLC',
-    title: 'Class X — School',
-    body: 'Strong academic foundation in mathematics and science. First exposure to programming basics.',
-    accent: false,
-  },
-  {
-    year: '2022',
-    label: 'HSC',
-    title: 'Class XII — School',
-    body: 'Completed senior secondary with physics, math, and computer science. Algorithmic thinking begins.',
-    accent: false,
-  },
-  {
-    year: '2022',
-    label: 'B.TECH START',
-    title: 'Joined KPRIET',
-    body: 'B.Tech Artificial Intelligence & Data Science at KPR Institute of Engineering and Technology, Coimbatore.',
-    accent: true,
-  },
-  {
-    year: '2024',
-    label: 'AI / DATA',
-    title: 'Projects in AI and Web',
-    body: 'Built 10+ projects covering ML, NLP, computer vision, e-commerce, edtech, and management systems.',
-    accent: false,
-  },
-  {
-    year: '2025',
-    label: 'HACKATHON',
-    title: 'Smart India Hackathon',
-    body: 'Developed advanced solutions under competitive pressure — autonomous systems and blockchain platforms.',
-    accent: true,
-  },
-  {
-    year: '2025',
-    label: 'ROBOTICS',
-    title: 'Autonomous Robotics',
-    body: 'KUTTY campus delivery robot — fusing SLAM, A* pathfinding, computer vision, and multi-sensor control.',
-    accent: true,
-  },
-  {
-    year: '2026',
-    label: 'PRESENT',
-    title: 'Final Year',
-    body: 'Completing B.Tech AI & DS. Focused on autonomous systems, full-stack AI, and open to opportunities.',
-    accent: false,
-  },
-];
 
 /* ===================================================
    CURSOR
@@ -457,38 +384,8 @@ function buildWorks() {
 }
 
 /* ===================================================
-   ARCHIVE ROWS
+   ARCHIVE ROWS (Removed)
 =================================================== */
-function buildArchive() {
-  const list = document.getElementById('archive-list');
-  if (!list) return;
-
-  ARCHIVE_PROJECTS.forEach((p, i) => {
-    const row = document.createElement('article');
-    row.className = 'archive-row reveal-up';
-    row.style.setProperty('--d', i % 4);
-    row.setAttribute('tabindex', '0');
-    row.setAttribute('role', 'button');
-    row.setAttribute('aria-label', `View ${p.title}`);
-
-    row.innerHTML = `
-      <span class="archive-num mono-sm">${p.num}</span>
-      <div class="archive-info">
-        <h3 class="archive-title">${p.title}</h3>
-        <p class="archive-subtitle">${p.subtitle}</p>
-      </div>
-      <span class="archive-category mono-sm">${p.category}</span>
-      <div class="archive-tags">${p.tags.slice(0,3).map(t => `<span class="work-tag">${t}</span>`).join('')}</div>
-      <span class="archive-arrow" aria-hidden="true">&rarr;</span>
-    `;
-
-    row.addEventListener('click', () => openModal(p, 'archive'));
-    row.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(p, 'archive'); });
-    list.appendChild(row);
-  });
-
-  initReveal();
-}
 
 /* ===================================================
    MODAL
@@ -605,64 +502,6 @@ function buildSkills() {
   });
 }
 
-/* ===================================================
-   HORIZONTAL JOURNEY TIMELINE
-=================================================== */
-function buildJourney() {
-  const track = document.getElementById('timeline-h-track');
-  if (!track) return;
-
-  JOURNEY_NODES.forEach((node, i) => {
-    const el = document.createElement('div');
-    el.className = `journey-node${node.accent ? ' accent' : ''}`;
-    el.style.setProperty('--idx', i);
-    el.innerHTML = `
-      <div class="journey-node-inner">
-        <span class="journey-year mono-sm">${node.year}</span>
-        <div class="journey-dot" aria-hidden="true"></div>
-        <span class="journey-label">${node.label}</span>
-        <h3 class="journey-title">${node.title}</h3>
-        <p class="journey-body">${node.body}</p>
-      </div>
-    `;
-    track.appendChild(el);
-  });
-
-  // Observe nodes for fade-in
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2, root: track.parentElement });
-  track.querySelectorAll('.journey-node').forEach(n => io.observe(n));
-
-  // Drag scroll on desktop
-  let isDown = false, startX, scrollLeft;
-  track.addEventListener('mousedown', e => {
-    isDown = true;
-    track.classList.add('dragging');
-    startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
-  });
-  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
-  track.addEventListener('mouseup',   () => { isDown = false; track.classList.remove('dragging'); });
-  track.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    track.scrollLeft = scrollLeft - (x - startX) * 1.2;
-  });
-}
-
-/* ===================================================
-   VERTICAL JOURNEY (fallback / original)
-=================================================== */
-function buildVerticalJourney() {
-  // kept empty — replaced by horizontal
-}
 
 /* ===================================================
    HERO NAME ANIMATION
@@ -828,9 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initSmoothScroll();
   buildWorks();
-  buildArchive();
   buildSkills();
-  buildJourney();
   initModal();
   initBackTop();
   initAwwwards();
