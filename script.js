@@ -294,72 +294,97 @@ function initNav() {
 }
 
 /* ===================================================
-   HERO CANVAS
+   HERO CANVAS (THREE.JS)
 =================================================== */
-function initCanvas() {
+function initThreeCanvas() {
   const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
+  if (!canvas || typeof THREE === 'undefined') return;
 
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
-      this.x = Math.random() * W;
-      this.y = Math.random() * H;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = (Math.random() - 0.5) * 0.3;
-      this.r  = Math.random() * 1.2 + 0.4;
-      this.alpha = Math.random() * 0.5 + 0.1;
-    }
-    update() {
-      this.x += this.vx; this.y += this.vy;
-      if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(201,56,43,${this.alpha})`;
-      ctx.fill();
-    }
-  }
+  // Neural Core geometry
+  const geometry = new THREE.IcosahedronGeometry(2, 3);
+  
+  // Create points
+  const pointsMaterial = new THREE.PointsMaterial({ 
+    color: 0xc9382b, 
+    size: 0.03,
+    transparent: true,
+    opacity: 0.8
+  });
+  const points = new THREE.Points(geometry, pointsMaterial);
+  
+  // Create wireframe connecting the nodes
+  const wireMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xc9382b, 
+    wireframe: true, 
+    transparent: true, 
+    opacity: 0.15 
+  });
+  const wire = new THREE.Mesh(geometry, wireMaterial);
 
-  function initParticles() {
-    particles = [];
-    const count = Math.floor((W * H) / 6000);
-    for (let i = 0; i < count; i++) particles.push(new Particle());
+  const group = new THREE.Group();
+  group.add(points);
+  group.add(wire);
+  
+  // Add some ambient particles
+  const particleGeo = new THREE.BufferGeometry();
+  const particleCount = 200;
+  const posArray = new Float32Array(particleCount * 3);
+  for(let i=0; i<particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
   }
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const pMat = new THREE.PointsMaterial({ size: 0.02, color: 0xc9382b, transparent: true, opacity: 0.4 });
+  const particlesMesh = new THREE.Points(particleGeo, pMat);
+  group.add(particlesMesh);
 
-  function drawConnections() {
-    const maxDist = 120;
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < maxDist) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(201,56,43,${0.06 * (1 - dist / maxDist)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-  }
+  scene.add(group);
+  camera.position.z = 6;
+  group.position.x = 2; // Shift right to balance hero text
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX - window.innerWidth / 2);
+    mouseY = (e.clientY - window.innerHeight / 2);
+  });
 
   let frame;
+  const clock = new THREE.Clock();
+
   function animate() {
-    ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => { p.update(); p.draw(); });
-    drawConnections();
     frame = requestAnimationFrame(animate);
+    const elapsedTime = clock.getElapsedTime();
+    
+    targetX = mouseX * 0.001;
+    targetY = mouseY * 0.001;
+
+    group.rotation.y += 0.002;
+    group.rotation.x += 0.001;
+    
+    // Neural core breathing effect
+    const scale = 1 + Math.sin(elapsedTime * 2) * 0.05;
+    points.scale.set(scale, scale, scale);
+    wire.scale.set(scale, scale, scale);
+
+    // Parallax mouse movement
+    group.rotation.x += 0.05 * (targetY - group.rotation.x);
+    group.rotation.y += 0.05 * (targetX - group.rotation.y);
+    
+    // Float effect
+    group.position.y = Math.sin(elapsedTime) * 0.2;
+
+    particlesMesh.rotation.y = -elapsedTime * 0.05;
+
+    renderer.render(scene, camera);
   }
 
   const observer = new IntersectionObserver(entries => {
@@ -368,17 +393,11 @@ function initCanvas() {
   }, { threshold: 0 });
   observer.observe(canvas);
 
-  resize(); initParticles();
-  let rt;
   window.addEventListener('resize', () => {
-    clearTimeout(rt);
-    rt = setTimeout(() => { resize(); initParticles(); }, 200);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
   }, { passive: true });
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    cancelAnimationFrame(frame);
-    canvas.style.display = 'none';
-  }
 }
 
 /* ===================================================
@@ -689,12 +708,123 @@ function initBackTop() {
 }
 
 /* ===================================================
+   AWWWARDS EXPERIENCE (GSAP + LENIS + PRELOADER)
+=================================================== */
+function initAwwwards() {
+  // Lenis Smooth Scroll
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
+    // Connect Lenis with GSAP ScrollTrigger
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    }
+  }
+
+  // Preloader Sequence
+  if (typeof gsap !== 'undefined') {
+    const tl = gsap.timeline();
+    
+    const counterObj = { val: 0 };
+    tl.to(counterObj, {
+      val: 100,
+      duration: 2,
+      ease: 'power2.inOut',
+      onUpdate: () => {
+        const counterEl = document.querySelector('.preloader-counter');
+        if (counterEl) counterEl.textContent = Math.floor(counterObj.val);
+      }
+    }, 0);
+
+    tl.to('.preloader-text span', {
+      y: 0,
+      opacity: 1,
+      stagger: 0.2,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 0);
+
+    tl.to('.preloader', {
+      clipPath: 'polygon(0 0, 100% 0, 100% 0%, 0 0%)',
+      duration: 1,
+      ease: 'power4.inOut',
+      delay: 0.5
+    });
+
+    tl.add(initHeroName, '-=0.5');
+  } else {
+    const preloader = document.getElementById('preloader');
+    if (preloader) preloader.style.display = 'none';
+    initHeroName();
+  }
+
+  // Currently Building Parallax & Magnetic Button
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.to('.word-track:not(.reverse)', {
+      xPercent: -20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.currently-building',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.5
+      }
+    });
+    gsap.to('.word-track.reverse', {
+      xPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.currently-building',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.5
+      }
+    });
+
+    const magneticBtn = document.getElementById('magnetic-contact');
+    if (magneticBtn) {
+      const text = magneticBtn.querySelector('.magnetic-btn-text');
+      magneticBtn.addEventListener('mousemove', (e) => {
+        const rect = magneticBtn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
+        gsap.to(magneticBtn, { x, y, duration: 0.5, ease: 'power2.out' });
+        if(text) gsap.to(text, { x: x * 0.5, y: y * 0.5, duration: 0.5, ease: 'power2.out' });
+      });
+      magneticBtn.addEventListener('mouseleave', () => {
+        gsap.to(magneticBtn, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
+        if(text) gsap.to(text, { x: 0, y: 0, duration: 0.8, ease: 'elastic.out(1, 0.3)' });
+      });
+    }
+  }
+}
+
+/* ===================================================
    INIT
 =================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initNav();
-  initCanvas();
+  initThreeCanvas();
   initReveal();
   initSmoothScroll();
   buildWorks();
@@ -703,5 +833,5 @@ document.addEventListener('DOMContentLoaded', () => {
   buildJourney();
   initModal();
   initBackTop();
-  initHeroName();
+  initAwwwards();
 });
