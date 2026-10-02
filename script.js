@@ -109,53 +109,53 @@ const FEATURED_PROJECTS = [
     thumb: 'assets/proj_nav_bot.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Chatbot', span: 'span-4'
   },
   {
-    num: '11', code: 'TRAVEL PLAN', category: 'WEB / PLANNING',
-    title: 'Smart Travel Planner', subtitle: 'Intelligent travel planning — itinerary, budget, and schedule.',
-    overview: 'A travel planning web app that combines interactive maps, itinerary builder, activity suggestions, and budget tracking to help users plan and organize trips end-to-end.',
-    problem: 'Travel planning requires juggling multiple apps for booking, mapping, and budgeting.', solution: 'Created a unified portal that aggregates maps and budgeting seamlessly.',
-    architecture: ['Destination', 'Plan', 'Explore', 'Itinerary', 'Trip'],
-    features: ['Interactive mapping', 'Itinerary building', 'Activity suggestions', 'Budget tracking'],
-    tags: ['React', 'Google Maps API', 'Node.js', 'MongoDB'],
-    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Travel', span: 'span-4'
+    num: '11', code: 'VISION TRACK', category: 'COMPUTER VISION / AI / YOLO',
+    title: 'AI Real-Time Object Tracker', subtitle: 'Multi-class object detection and spatial trajectory tracking with YOLOv8 & OpenCV.',
+    overview: 'A real-time computer vision system that tracks multiple moving entities with YOLOv8, maintains stable trajectory IDs via Kalman filtering, and overlays analytics.',
+    problem: 'Camera surveillance feeds require automated high-accuracy object localization and velocity tracking.', solution: 'Deployed a YOLOv8 and OpenCV pipeline capable of real-time multi-target tracking at 30+ FPS.',
+    architecture: ['Video Feed', 'YOLOv8 Detector', 'Kalman Tracker', 'Trajectory Engine', 'Visual Dashboard'],
+    features: ['Multi-class object detection', 'Kalman filter trajectory smoothing', 'Real-time FPS telemetry', 'Bounding-box ID persistence'],
+    tags: ['Python', 'YOLOv8', 'OpenCV', 'PyTorch'],
+    thumb: 'assets/proj_object_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Vision', span: 'span-4'
   },
   {
-    num: '12', code: 'SMART CALC', category: 'WEB / JAVASCRIPT',
-    title: 'Smart Calculator', subtitle: 'Minimal interactive calculator with history.',
-    overview: 'A beautifully designed, keyboard-accessible calculator with animated interactions, calculation history panel, and responsive layout. A minimal project with premium polish.',
-    problem: 'Default OS calculators lack design aesthetic and robust history tracking.', solution: 'Built an Awwwards-style web calculator focused entirely on micro-interactions.',
-    architecture: ['Input', 'Expression', 'Evaluate', 'History'],
-    features: ['Keyboard access', 'Animated transitions', 'Calculation history', 'Responsive UI'],
-    tags: ['HTML', 'CSS', 'Vanilla JS'],
-    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Calc', span: 'span-6'
+    num: '12', code: 'RESUME AI', category: 'AI / NLP / RECRUITING TECH',
+    title: 'AI Resume Analyzer & Parser', subtitle: 'Automated CV analysis, skill extraction, and candidate-job matching engine.',
+    overview: 'An intelligent document processing platform that parses PDF/DOCX resumes, extracts key skills, experience, and educational background, and calculates job match scores.',
+    problem: 'Recruiters spend countless hours manually filtering hundreds of unstructured resumes.', solution: 'Built an automated NLP pipeline using spaCy and TF-IDF semantic embeddings to rank applicant fit score.',
+    architecture: ['Document Upload', 'Text Extractor', 'spaCy NER', 'Skill Matcher', 'Analytics Report'],
+    features: ['Automated PDF/DOCX extraction', 'Skill entity recognition', 'Semantic job fit scoring', 'Comparative dashboard'],
+    tags: ['Python', 'spaCy', 'FastAPI', 'React'],
+    thumb: 'assets/proj_resume_ai.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Resume AI', span: 'span-6'
   },
   {
-    num: '13', code: 'LOST & FOUND', category: 'JAVA / MANAGEMENT',
-    title: 'Lost & Found System', subtitle: 'Java-based management system for registering and matching items.',
-    overview: 'A Java Swing/JavaFX application for managing lost and found items. Users register lost or found items, and the system automatically matches records and notifies claimants.',
-    problem: 'Institutions use inefficient, disjointed physical ledgers for lost items.', solution: 'Engineered an automated matching engine based on physical item attributes.',
-    architecture: ['User', 'System', 'Item Database', 'Matching', 'Claim'],
-    features: ['Item registration', 'Automatic matching', 'User notifications', 'Database persistence'],
-    tags: ['Java', 'MySQL', 'JavaFX', 'JDBC'],
-    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore System', span: 'span-6'
+    num: '13', code: 'SOLAR IOT', category: 'ROBOTICS / IOT / CLEAN ENERGY',
+    title: 'IoT Dual-Axis Solar Tracker', subtitle: 'Smart dual-axis solar tracking system maximizing photovoltaic power generation.',
+    overview: 'An embedded dual-axis tracking device with light-dependent resistors and high-torque servo motors controlled by an Arduino microcontroller to track the sun path in real-time.',
+    problem: 'Fixed solar panels suffer massive efficiency drops when the sun moves away from perpendicular.', solution: 'Engineered a dual-axis robotic mount that continuously realigns to maximum lux levels, increasing efficiency by ~30%.',
+    architecture: ['LDR Sensors', 'Arduino Controller', 'Servo Motors', 'Solar Panel', 'IoT Telemetry'],
+    features: ['Dual-axis servo tracking', 'Real-time lux gradient sensing', 'IoT energy generation logging', 'Overheat & storm protection'],
+    tags: ['Arduino', 'C++', 'IoT', 'Sensors', 'ESP32'],
+    thumb: 'assets/proj_solar_tracker.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Solar', span: 'span-6'
   },
   {
-    num: '14', code: 'DATA STORIES', category: 'DATA SCIENCE / VISUALIZATION',
-    title: 'Data Stories', subtitle: 'Interactive data analysis and visualization.',
-    overview: 'A collection of data analysis notebooks covering transformation, conditional columns, API data, statistical analysis, bar plots, scatter plots, heatmaps, and insight narratives.',
-    problem: 'Raw data is unreadable to non-technical stakeholders.', solution: 'Generated rich visualization notebooks and dashboards converting data to narratives.',
-    architecture: ['Raw Data', 'Transformation', 'Analysis', 'Visualization', 'Insight'],
-    features: ['Statistical analysis', 'Bar & Scatter plots', 'Heatmap generation', 'Data cleaning'],
-    tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter'],
-    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Data', span: 'span-8'
+    num: '14', code: 'AIR DRAWING', category: 'COMPUTER VISION / GESTURE AI',
+    title: 'Air Drawing AI — Hand Canvas', subtitle: 'Touchless virtual drawing canvas using webcam hand gesture tracking.',
+    overview: 'A real-time webcam gesture interaction system that tracks 21 hand landmarks using MediaPipe and OpenCV, enabling users to draw, erase, and select colors in mid-air.',
+    problem: 'Interactive whiteboard systems rely on expensive touch hardware or digital styluses.', solution: 'Built a touchless computer vision canvas with real-time finger gesture state recognition and trajectory smoothing.',
+    architecture: ['Webcam Stream', 'MediaPipe Hands', 'Gesture Engine', 'Virtual Canvas', 'Display Overlay'],
+    features: ['21-point hand landmark tracking', 'Dynamic color selection & erase mode', 'Trajectory stroke smoothing', 'Real-time 45+ FPS processing'],
+    tags: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
+    thumb: 'assets/proj_air_drawing.jpg', github: 'https://github.com/nandha97151-lab', cta: 'Explore Air Draw', span: 'span-8'
   },
   {
     num: '15', code: 'PORTFOLIO 2.0', category: 'WEB / CREATIVE DEVELOPMENT',
-    title: 'Portfolio 2.0', subtitle: 'Cinematic personal portfolio with scroll-driven storytelling.',
-    overview: 'This portfolio itself is a project — built with pure HTML, CSS, and vanilla JavaScript. Features a particle canvas, custom cursor, GSAP ScrollTrigger, and full case study modals.',
-    problem: 'Most developer portfolios look templated and generic.', solution: 'Developed a complete cinematic dark-tech identity with zero frontend frameworks.',
-    architecture: ['Design System', 'Component Layout', 'Scroll Reveal', 'Modal System', 'Canvas Particles'],
-    features: ['Particle canvas', 'Spring-physics cursor', 'Bento-grid', 'GSAP ScrollTrigger', 'Lenis Smooth Scroll'],
-    tags: ['HTML5', 'CSS3', 'Vanilla JS', 'GSAP', 'Lenis', 'Three.js'],
+    title: 'Portfolio 2.0 — Dark-Tech Identity', subtitle: 'Cinematic personal portfolio with Three.js particle canvas and dark-tech identity.',
+    overview: 'A modern developer portfolio built from scratch with pure HTML5, CSS3, and vanilla JavaScript. Features a Three.js 3D neural core, custom physics cursor, GSAP interactions, and case study modals.',
+    problem: 'Standard developer templates feel generic and lack distinctive engineering brand identity.', solution: 'Created a custom dark-tech aesthetic portfolio with custom WebGL canvas, bento layout, and interactive modal system.',
+    architecture: ['Three.js Neural Core', 'GSAP ScrollTrigger', 'Bento Architecture', 'Modal System', 'Vanilla JS Engine'],
+    features: ['3D WebGL neural core', 'Spring-physics cursor', 'Responsive bento layout', 'Complete case study modal system'],
+    tags: ['HTML5', 'CSS3', 'Vanilla JS', 'Three.js', 'GSAP'],
     thumb: 'assets/proj_portfolio.jpg', github: 'https://github.com/nandha97151-lab/nandha97151-lab.github.io', cta: 'Explore Portfolio', span: 'span-4'
   }
 ];
@@ -366,18 +366,21 @@ function initThreeCanvas() {
    SCROLL REVEAL
 =================================================== */
 function initReveal() {
-  const els = document.querySelectorAll('.reveal-up');
+  const els = document.querySelectorAll('.reveal-up:not(.in-view)');
   if (!els.length) return;
-  const io = new IntersectionObserver(entries => {
+  const io = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
   els.forEach(el => io.observe(el));
 }
 
 /* ===================================================
-   FEATURED WORKS BENTO
+   FEATURED WORKS BENTO (All 15 Projects)
 =================================================== */
 function buildWorks() {
   const grid = document.getElementById('works-grid');
@@ -394,7 +397,7 @@ function buildWorks() {
 
     card.innerHTML = `
       <div class="work-thumb-wrap">
-        <img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="lazy"
+        <img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="${i < 6 ? 'eager' : 'lazy'}" decoding="async"
           onerror="this.style.display='none';this.parentElement.querySelector('.work-thumb-fallback').style.display='flex'">
         <div class="work-thumb-fallback" style="display:none;position:absolute;inset:0;background:linear-gradient(135deg,#1a0a0a 0%,#0d1117 50%,#0c0c0e 100%);align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
           <span style="font-family:var(--f-mono);font-size:28px;color:rgba(201,56,43,0.4);">${p.num}</span>

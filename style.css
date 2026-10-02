@@ -1133,66 +1133,6 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
 }
 
 /* ================================================ */
-/* === WORK CARD THUMB OVERLAY === */
-/* ================================================ */
-.work-thumb-wrap {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  border-radius: 4px 4px 0 0;
-  flex-shrink: 0;
-}
-.work-thumb-wrap .work-thumb {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s var(--ease-out);
-}
-.work-thumb-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, transparent 60%);
-  pointer-events: none;
-}
-.work-card:hover .work-thumb { transform: scale(1.04); }
-
-.work-body-top {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.4rem;
-}
-.work-num  { color: var(--text-3); }
-.work-code {
-  font-family: var(--f-mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  text-transform: uppercase;
-  border: 1px solid var(--accent-dim);
-  padding: 2px 8px;
-  border-radius: 2px;
-}
-.work-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
-}
-.work-cta-hint {
-  font-family: var(--f-mono);
-  font-size: 11px;
-  color: var(--text-3);
-  letter-spacing: 0.08em;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-.work-card:hover .work-cta-hint { color: var(--accent); }
-
-/* ================================================ */
 /* === ARCHIVE SECTION === */
 /* ================================================ */
 .archive {
