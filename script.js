@@ -389,7 +389,7 @@ function buildWorks() {
   grid.innerHTML = '';
   FEATURED_PROJECTS.forEach((p, i) => {
     const card = document.createElement('article');
-    card.className = `work-card ${p.span} reveal-up`;
+    card.className = `work-card ${p.span} in-view`;
     card.style.setProperty('--d', i % 3);
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
@@ -397,11 +397,11 @@ function buildWorks() {
 
     card.innerHTML = `
       <div class="work-thumb-wrap">
-        <img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="${i < 6 ? 'eager' : 'lazy'}" decoding="async"
+        <img src="${p.thumb}" alt="${p.title}" class="work-thumb" loading="eager" decoding="async"
           onerror="this.style.display='none';this.parentElement.querySelector('.work-thumb-fallback').style.display='flex'">
         <div class="work-thumb-fallback" style="display:none;position:absolute;inset:0;background:linear-gradient(135deg,#1a0a0a 0%,#0d1117 50%,#0c0c0e 100%);align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
-          <span style="font-family:var(--f-mono);font-size:28px;color:rgba(201,56,43,0.4);">${p.num}</span>
-          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:0.2em;color:rgba(201,56,43,0.5);text-transform:uppercase;">${p.code}</span>
+          <span style="font-family:var(--f-mono);font-size:28px;color:rgba(201,56,43,0.6);">${p.num}</span>
+          <span style="font-family:var(--f-mono);font-size:9px;letter-spacing:0.2em;color:rgba(201,56,43,0.8);text-transform:uppercase;">${p.code}</span>
         </div>
         <div class="work-thumb-overlay"></div>
       </div>
@@ -423,8 +423,6 @@ function buildWorks() {
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(p, 'featured'); });
     grid.appendChild(card);
   });
-
-  initReveal();
 }
 
 /* ===================================================

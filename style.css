@@ -519,6 +519,9 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none;
   transition: border-color 0.3s ease, transform 0.35s var(--ease-out), box-shadow 0.35s ease;
 }
 .work-card:hover {
