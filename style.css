@@ -689,6 +689,47 @@ body.cursor-hover .cursor-ring { width: 54px; height: 54px; }
   white-space: nowrap;
 }
 
+.work-card-center-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem 0 0.8rem;
+  position: relative;
+}
+
+.work-center-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.work-center-dot::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.work-card:hover .work-center-dot {
+  border-color: rgba(201, 56, 43, 0.6);
+  background: rgba(201, 56, 43, 0.12);
+  transform: scale(1.1);
+}
+
+.work-card:hover .work-center-dot::after {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
 .work-card:hover .work-cta-hint {
   color: #ff5242;
   transform: translateX(4px);

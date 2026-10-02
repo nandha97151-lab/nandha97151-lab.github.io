@@ -413,11 +413,12 @@ function buildWorks() {
         <span class="work-category">${p.category}</span>
         <h3 class="work-title">${p.title}</h3>
         <p class="work-desc">${p.subtitle}</p>
+        <div class="work-card-center-icon">
+          <div class="work-center-dot"></div>
+        </div>
         <div class="work-footer">
           <div class="work-tags">${p.tags.slice(0, 4).map(t => `<span class="work-tag">${t}</span>`).join('')}</div>
-          <div class="work-actions">
-            <span class="work-cta-hint">${p.cta} &rarr;</span>
-          </div>
+          <span class="work-cta-hint">${p.cta} &rarr;</span>
         </div>
       </div>
     `;
